@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dbr2l2ycbii07"]
+
+[ext_resource type="Texture2D" uid="uid://oclmk0ymx3f7" path="res://assets/visual/passengers_placeholder.png" id="1_du66k"]
+[ext_resource type="PackedScene" uid="uid://dhkjhfetjbqx4" path="res://scenes/camera_manager.tscn" id="2_rs323"]
+
+[node name="PassengerView" type="Node2D" unique_id=468730665]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=207155409]
+texture = ExtResource("1_du66k")
+
+[node name="CameraManager" parent="." unique_id=1349570711 instance=ExtResource("2_rs323")]

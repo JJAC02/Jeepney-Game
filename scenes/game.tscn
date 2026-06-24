@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dwxf3gx2amt5m"]
+
+[ext_resource type="Script" uid="uid://6lqnw18yye44" path="res://scenes/game.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b0wi2tshrtg07" path="res://scenes/windshield_view.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dbr2l2ycbii07" path="res://scenes/passenger_view.tscn" id="4_lbhrr"]
+
+[sub_resource type="GDScript" id="GDScript_lbhrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqjtg"]
+bg_color = Color(0.4958614, 0.5499482, 1, 1)
+
+[node name="Game" type="Node2D" unique_id=356773611]
+script = ExtResource("1_lnu2h")
+metadata/_edit_vertical_guides_ = [-626.0]
+metadata/_edit_horizontal_guides_ = [-470.0]
+
+[node name="WindshieldView" parent="." unique_id=1958105662 instance=ExtResource("1_uwrxv")]
+script = SubResource("GDScript_lbhrr")
+
+[node name="Button" type="Button" parent="WindshieldView" unique_id=189431013]
+offset_left = -96.0
+offset_top = 201.0
+offset_right = 101.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 76
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqjtg")
+text = "BACK"
+
+[node name="PassengerView" parent="." unique_id=468730665 instance=ExtResource("4_lbhrr")]
+position = Vector2(0, 1)
+
+[node name="Button" type="Button" parent="PassengerView" unique_id=1417298797]
+offset_left = -77.0
+offset_top = 206.0
+offset_right = 120.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 76
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqjtg")
+text = "BACK"
+
+[connection signal="pressed" from="WindshieldView/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PassengerView/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PassengerView/Button" to="WindshieldView" method="_on_button_pressed"]

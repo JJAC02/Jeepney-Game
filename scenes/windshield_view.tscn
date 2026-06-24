@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b0wi2tshrtg07"]
+
+[ext_resource type="Texture2D" uid="uid://dbxlw2w50tib8" path="res://assets/visual/pixel_art_windshield.png" id="1_veopg"]
+[ext_resource type="PackedScene" uid="uid://dhkjhfetjbqx4" path="res://scenes/camera_manager.tscn" id="2_r11ry"]
+
+[node name="WindshieldView" type="Node2D" unique_id=356773611]
+metadata/_edit_vertical_guides_ = [-626.0]
+metadata/_edit_horizontal_guides_ = [-470.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1156940859]
+scale = Vector2(1.0491071, 1.0491072)
+texture = ExtResource("1_veopg")
+
+[node name="CameraManager" parent="." unique_id=1349570711 instance=ExtResource("2_r11ry")]

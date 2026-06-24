@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhkjhfetjbqx4"]
+
+[ext_resource type="Script" uid="uid://bna2mbyla4i1h" path="res://scripts/camera_manager.gd" id="1_utxs1"]
+
+[node name="CameraManager" type="Node2D" unique_id=1349570711]
+script = ExtResource("1_utxs1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=794363639]
+limit_left = -626
+limit_top = -470
+limit_right = 626
+limit_bottom = 470
+position_smoothing_enabled = true
