@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6lqnw18yye44" path="res://scripts/managers/GameManager.gd" id="1_vrspl"]
 [ext_resource type="PackedScene" uid="uid://b0wi2tshrtg07" path="res://scenes/game/CockpitView.tscn" id="2_7qcb4"]
 [ext_resource type="PackedScene" uid="uid://dbr2l2ycbii07" path="res://scenes/game/PassengerView.tscn" id="3_lyhax"]
+[ext_resource type="Script" uid="uid://dlsvqyi2n4gy8" path="res://scripts/managers/EventManager.gd" id="5_365ku"]
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 
@@ -37,6 +38,9 @@ offset_bottom = 311.0
 theme_override_font_sizes/font_size = 76
 theme_override_styles/normal = SubResource("StyleBoxFlat_yqjtg")
 text = "BACK"
+
+[node name="EventManager" type="Node" parent="." unique_id=1659677044]
+script = ExtResource("5_365ku")
 
 [connection signal="pressed" from="WindshieldView/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PassengerView/Button" to="." method="_on_button_pressed"]

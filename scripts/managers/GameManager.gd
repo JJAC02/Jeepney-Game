@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		global_position = event.relative
+		global_position = event.screen_relative
 
 
 func _on_button_pressed() -> void:
