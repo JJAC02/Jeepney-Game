@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dwxf3gx2amt5m"]
+
+[ext_resource type="Script" uid="uid://6lqnw18yye44" path="res://main/autoload/GameManager.gd" id="1_vrspl"]
+[ext_resource type="Script" uid="uid://djpl81nmf0xss" path="res://main/game/view_manager.gd" id="2_1qhgg"]
+[ext_resource type="PackedScene" uid="uid://b0wi2tshrtg07" path="res://main/game/DriverView.tscn" id="2_7qcb4"]
+[ext_resource type="PackedScene" uid="uid://dbr2l2ycbii07" path="res://main/game/PassengerView.tscn" id="3_lyhax"]
+
+[node name="Game" type="Node" unique_id=2010332503]
+script = ExtResource("1_vrspl")
+metadata/_edit_vertical_guides_ = [-626.0]
+metadata/_edit_horizontal_guides_ = [-470.0]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1153807827]
+
+[node name="ViewManager" type="Node2D" parent="." unique_id=1587934121]
+script = ExtResource("2_1qhgg")
+
+[node name="DriverView" parent="ViewManager" unique_id=939611382 instance=ExtResource("2_7qcb4")]
+
+[node name="PassengerView" parent="ViewManager" unique_id=468730665 instance=ExtResource("3_lyhax")]
+
+[connection signal="change_view" from="ViewManager/DriverView" to="ViewManager" method="_on_driver_view_change_view"]

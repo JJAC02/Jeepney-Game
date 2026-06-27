@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://b3t6bbx6g3qs1"]
-
-[ext_resource type="Script" uid="uid://cr42iup6lovrk" path="res://scripts/events/TrafficJam.gd" id="1_4gri0"]
-
-[node name="TrafficJam" type="Node" unique_id=2092641358]
-script = ExtResource("1_4gri0")

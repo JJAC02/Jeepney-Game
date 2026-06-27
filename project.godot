@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jeepney Game"
-run/main_scene="res://scenes/game/Game.tscn"
+run/main_scene="res://main/game/Game.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/placeholders/icon.svg"
 

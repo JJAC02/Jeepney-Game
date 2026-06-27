@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dbr2l2ycbii07"]
+
+[ext_resource type="Script" uid="uid://yjx0f7vhn7kd" path="res://main/game/passenger_view.gd" id="1_boad2"]
+[ext_resource type="Texture2D" uid="uid://oclmk0ymx3f7" path="res://assets/placeholders/passengers_placeholder.png" id="1_du66k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rfsd"]
+bg_color = Color(0.4958614, 0.5499482, 1, 1)
+
+[node name="PassengerView" type="Node2D" unique_id=468730665]
+script = ExtResource("1_boad2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=207155409]
+texture = ExtResource("1_du66k")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=339580077]
+position_smoothing_enabled = true
+
+[node name="Control" type="Control" parent="." unique_id=743685704]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control" unique_id=1913424379]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 206.0
+offset_right = 120.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 76
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rfsd")
+text = "BACK"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

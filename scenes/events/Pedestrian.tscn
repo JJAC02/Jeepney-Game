@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://tttlpjdj4sp2"]
-
-[ext_resource type="Script" uid="uid://b0q5tgl5nen83" path="res://scripts/events/Pedestrian.gd" id="1_h1f3d"]
-
-[node name="Pedestrian" type="Node2D" unique_id=271732809]
-script = ExtResource("1_h1f3d")

@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://o1fvvkxs48vn"]
-
-[ext_resource type="Script" uid="uid://qu4ig3xpc468" path="res://scripts/events/StopSign.gd" id="1_mbsnh"]
-
-[node name="StopSign" type="Node" unique_id=423395100]
-script = ExtResource("1_mbsnh")
