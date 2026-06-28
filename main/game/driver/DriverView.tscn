@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b0wi2tshrtg07"]
 
-[ext_resource type="Script" uid="uid://dxjjiashrwrx4" path="res://main/game/driver_view.gd" id="1_ni8rb"]
+[ext_resource type="Script" uid="uid://dxjjiashrwrx4" path="res://main/game/driver/driver_view.gd" id="1_ni8rb"]
 [ext_resource type="Texture2D" uid="uid://dbxlw2w50tib8" path="res://assets/placeholders/pixel_art_windshield.png" id="1_veopg"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ctd0"]
 bg_color = Color(0.4958614, 0.5499482, 1, 1)

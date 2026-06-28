@@ -1,18 +1,35 @@
 [gd_scene format=3 uid="uid://dwxf3gx2amt5m"]
 
-[ext_resource type="Script" uid="uid://6lqnw18yye44" path="res://main/autoload/GameManager.gd" id="1_vrspl"]
+[ext_resource type="PackedScene" uid="uid://wg7mfsjwy8er" path="res://main/ui/EndDayScreen.tscn" id="1_pav1k"]
 [ext_resource type="Script" uid="uid://djpl81nmf0xss" path="res://main/game/view_manager.gd" id="2_1qhgg"]
-[ext_resource type="PackedScene" uid="uid://b0wi2tshrtg07" path="res://main/game/DriverView.tscn" id="2_7qcb4"]
-[ext_resource type="PackedScene" uid="uid://dbr2l2ycbii07" path="res://main/game/PassengerView.tscn" id="3_lyhax"]
+[ext_resource type="PackedScene" uid="uid://b0wi2tshrtg07" path="res://main/game/driver/DriverView.tscn" id="2_7qcb4"]
+[ext_resource type="PackedScene" uid="uid://c0yb3w1v4esjp" path="res://main/ui/GameOverScreen.tscn" id="2_vv66y"]
+[ext_resource type="PackedScene" uid="uid://dbr2l2ycbii07" path="res://main/game/passenger/PassengerView.tscn" id="3_lyhax"]
+[ext_resource type="PackedScene" uid="uid://d2txxhxk16xxd" path="res://main/ui/MainMenu.tscn" id="3_udk20"]
+[ext_resource type="PackedScene" uid="uid://duqs10jrkrc5" path="res://main/ui/PauseMenu.tscn" id="4_t8yow"]
 
 [node name="Game" type="Node" unique_id=2010332503]
-script = ExtResource("1_vrspl")
+process_mode = 3
 metadata/_edit_vertical_guides_ = [-626.0]
 metadata/_edit_horizontal_guides_ = [-470.0]
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1153807827]
 
+[node name="EndDayScreen" parent="UILayer" unique_id=1942917826 instance=ExtResource("1_pav1k")]
+mouse_filter = 2
+
+[node name="GameOverScreen" parent="UILayer" unique_id=82094813 instance=ExtResource("2_vv66y")]
+mouse_filter = 2
+
+[node name="MainMenu" parent="UILayer" unique_id=1566807727 instance=ExtResource("3_udk20")]
+mouse_filter = 2
+
+[node name="PauseMenu" parent="UILayer" unique_id=472911370 instance=ExtResource("4_t8yow")]
+process_mode = 1
+mouse_filter = 2
+
 [node name="ViewManager" type="Node2D" parent="." unique_id=1587934121]
+process_mode = 1
 script = ExtResource("2_1qhgg")
 
 [node name="DriverView" parent="ViewManager" unique_id=939611382 instance=ExtResource("2_7qcb4")]
