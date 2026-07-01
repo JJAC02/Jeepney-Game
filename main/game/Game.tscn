@@ -48,5 +48,6 @@ one_shot = true
 [connection signal="change_view" from="UILayer/GameMenu" to="." method="_on_game_menu_change_view"]
 [connection signal="pause_game" from="UILayer/GameMenu" to="." method="_on_pause_button"]
 [connection signal="unpause_pressed" from="UILayer/PauseMenu" to="." method="_on_unpause_pressed"]
+[connection signal="restart_game" from="UILayer/GameOverScreen" to="." method="_on_game_over_restart"]
 [connection signal="next_day" from="UILayer/EndDayScreen" to="." method="_on_end_day_screen_next_day"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

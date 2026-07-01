@@ -4,6 +4,8 @@ extends Node
 #signal game_over(score: int)
 @warning_ignore("unused_signal") signal back_to_main_menu(node_self: Control)
 
+@warning_ignore("unused_signal") signal game_over
+
 # variables persist over different days
 var day: int = 1
 var money_goal: int = 100
