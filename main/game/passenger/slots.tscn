@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bnqlveksevyue"]
+
+[node name="slots" type="Node2D" unique_id=260973931]
+
+[node name="seat1" type="Marker2D" parent="." unique_id=1903631102]
+position = Vector2(-246, 40)
+
+[node name="seat2" type="Marker2D" parent="." unique_id=82140706]
+position = Vector2(-282, 58)
+
+[node name="seat3" type="Marker2D" parent="." unique_id=647422181]
+position = Vector2(-318, 81)
+
+[node name="seat4" type="Marker2D" parent="." unique_id=1458050983]
+position = Vector2(-361, 105)
+
+[node name="seat5" type="Marker2D" parent="." unique_id=374777268]
+position = Vector2(-420, 133)
+
+[node name="seat6" type="Marker2D" parent="." unique_id=1982420351]
+position = Vector2(-468, 160)
+
+[node name="seat7" type="Marker2D" parent="." unique_id=1799723817]
+position = Vector2(-521, 187)
+
+[node name="seat8" type="Marker2D" parent="." unique_id=1287483455]
+position = Vector2(-599, 227)
+
+[node name="seat9" type="Marker2D" parent="." unique_id=29878318]
+position = Vector2(258, 48)
+
+[node name="seat10" type="Marker2D" parent="." unique_id=694172609]
+position = Vector2(293, 68)
+
+[node name="seat11" type="Marker2D" parent="." unique_id=1630391300]
+position = Vector2(334, 90)
+
+[node name="seat12" type="Marker2D" parent="." unique_id=1441196033]
+position = Vector2(373, 109)
+
+[node name="seat13" type="Marker2D" parent="." unique_id=640269157]
+position = Vector2(431, 134)
+
+[node name="seat14" type="Marker2D" parent="." unique_id=1581907750]
+position = Vector2(479, 156)
+
+[node name="seat15" type="Marker2D" parent="." unique_id=1187278852]
+position = Vector2(522, 177)
+
+[node name="seat16" type="Marker2D" parent="." unique_id=445765942]
+position = Vector2(581, 207)

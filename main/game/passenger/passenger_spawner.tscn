@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ccubswjfc2is4"]
+
+[ext_resource type="Script" uid="uid://w0gtw1elo3si" path="res://pass_spawner.gd" id="1_p2slr"]
+
+[node name="PassengerSpawner" type="Node2D" unique_id=1481479271]
+script = ExtResource("1_p2slr")
+
+[node name="Timer" type="Timer" parent="." unique_id=648846011]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
