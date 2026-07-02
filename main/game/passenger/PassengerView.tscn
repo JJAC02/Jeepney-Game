@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://dbr2l2ycbii07"]
 
 [ext_resource type="Script" uid="uid://yjx0f7vhn7kd" path="res://main/game/passenger/passenger_view.gd" id="1_boad2"]
-[ext_resource type="Texture2D" uid="uid://oclmk0ymx3f7" path="res://assets/placeholders/passengers_placeholder.png" id="1_du66k"]
+[ext_resource type="Texture2D" uid="uid://ded3rj7ewuy67" path="res://assets/art/passenger/backJeep.png" id="2_6w6st"]
+[ext_resource type="PackedScene" uid="uid://bnqlveksevyue" path="res://main/game/passenger/slots.tscn" id="3_yb8bs"]
 
 [node name="PassengerView" type="Node2D" unique_id=468730665]
 script = ExtResource("1_boad2")
+metadata/_edit_horizontal_guides_ = [-161.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=207155409]
-texture = ExtResource("1_du66k")
+scale = Vector2(0.68955255, 0.68955255)
+texture = ExtResource("2_6w6st")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=339580077]
+scale = Vector2(1.3439847, 1.1384484)
 position_smoothing_enabled = true
 
 [node name="Control" type="Control" parent="." unique_id=743685704]
@@ -17,3 +21,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="slots" parent="." unique_id=260973931 instance=ExtResource("3_yb8bs")]
+position = Vector2(10, 13)
+scale = Vector2(0.88649064, 0.88649064)
