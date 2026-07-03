@@ -36,7 +36,7 @@ func _on_timer_timeout() -> void:
 		start_spawning()
 	elif is_picked_up == false and individualPassenger != null:
 		individualPassenger = null
-	
+	is_picked_up = false
 	start_randTimer()
 	
 func picked_up():
