@@ -33,7 +33,6 @@ func _on_timer_timeout() -> void:
 		individual_passenger = null
 	
 	is_picked_up = false
-	individualPassenger.queue_free()
 	start_randTimer()
 
 func picked_up(inst: Node2D):
