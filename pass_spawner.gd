@@ -4,6 +4,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var seat_slots: Node2D = $"../../PassengerView/slots"
 
+var is_picked_up: bool = false
 var seat_idx: int = -1
 var individualPassenger = null
 # Called when the node enters the scene tree for the first time.
@@ -31,17 +32,18 @@ func start_spawning():
 	individualPassenger = passengerInstance
 
 func _on_timer_timeout() -> void:
-	if individualPassenger != null:	
-		remove_child(individualPassenger)
-		individualPassenger = null
-	else:	
+	if individualPassenger == null or (individualPassenger != null and is_picked_up == true):
 		start_spawning()
+	elif is_picked_up == false and individualPassenger != null:
+		individualPassenger = null
+	is_picked_up = false
 	start_randTimer()
 	
 func picked_up():
 	print("signal pickup received")
 	var takeSeat: Marker2D = you_yizi()
 	if takeSeat != null:
+		is_picked_up = true
 		individualPassenger.reparent(takeSeat)
 		individualPassenger.position = Vector2.ZERO
 		individualPassenger.go_in(seat_idx)
@@ -51,9 +53,9 @@ func picked_up():
 	
 	
 func you_yizi() -> Marker2D:
-	var seat_slots = seat_slots.get_children()
-	for i in range(seat_slots.size()):
-		var seat: Marker2D = seat_slots[i]
+	var seats = seat_slots.get_children()
+	for i in range(seats.size()):
+		var seat: Marker2D = seats[i]
 		if seat.get_child_count() == 0:
 			seat_idx = i
 			return seat
