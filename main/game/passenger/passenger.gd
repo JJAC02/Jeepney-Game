@@ -1,6 +1,6 @@
 extends Node2D
 
-signal transfer_me()
+signal transfer_me(inst: Node2D)
 
 @onready var btn: TextureButton = $TextureButton
 @onready var full: Sprite2D = $full
@@ -28,4 +28,4 @@ func show_full() -> void:
 
 func _on_texture_button_pressed() -> void:
 	print("emitting pickup")
-	transfer_me.emit()
+	transfer_me.emit(self)

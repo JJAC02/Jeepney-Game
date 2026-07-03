@@ -33,21 +33,22 @@ func _on_timer_timeout() -> void:
 		individual_passenger.queue_free()
 		individual_passenger = null
 	
+	is_picked_up = false
 	start_randTimer()
 
-func picked_up():
+func picked_up(inst: Node2D):
 	if individual_passenger == null: # safety catch
 		return
 	print("signal pickup received")
 	var take_seat: Marker2D = you_yizi()
 	if take_seat != null:
 		is_picked_up = true
-		individual_passenger.reparent(take_seat)
-		individual_passenger.position = Vector2.ZERO
-		individual_passenger.go_in(seat_idx)
+		inst.reparent(take_seat)
+		inst.position = Vector2.ZERO
+		inst.go_in(seat_idx)
 	else:
 		print("full")
-		individual_passenger.show_full()
+		inst.show_full()
 	
 func you_yizi() -> Marker2D:
 	var seats = seat_slots.get_children()
