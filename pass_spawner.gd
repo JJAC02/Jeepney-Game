@@ -10,15 +10,6 @@ var individualPassenger = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.game_started.connect(start_randTimer)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-func spawn_init():
-	start_randTimer()
 
 func start_randTimer() -> void:
 	timer.wait_time = randf_range(1.00, 3.00)
@@ -37,9 +28,11 @@ func _on_timer_timeout() -> void:
 	elif is_picked_up == false and individualPassenger != null:
 		individualPassenger = null
 	is_picked_up = false
+	individualPassenger.queue_free()
 	start_randTimer()
 	
 func picked_up():
+	print(individualPassenger)
 	print("signal pickup received")
 	var takeSeat: Marker2D = you_yizi()
 	if takeSeat != null:

@@ -10,12 +10,12 @@
 script = ExtResource("1_3egj2")
 
 [node name="paraPo" type="Sprite2D" parent="." unique_id=1925670290]
-scale = Vector2(0.27610865, 0.27610865)
+scale = Vector2(0.531, 0.531)
 texture = ExtResource("2_d4yvj")
 
 [node name="sitting" type="Sprite2D" parent="." unique_id=1395879921]
 position = Vector2(1.0000916, 0.9999962)
-scale = Vector2(0.26953784, 0.26953784)
+scale = Vector2(0.531, 0.531)
 texture = ExtResource("3_d4yvj")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1061079813]

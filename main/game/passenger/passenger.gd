@@ -8,6 +8,7 @@ signal transfer_me()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("ready pass")
+	print(self)
 	btn.show()
 	sitting.hide()
 	full.hide()
