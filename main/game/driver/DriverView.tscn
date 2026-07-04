@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dbxlw2w50tib8" path="res://assets/placeholders/pixel_art_windshield.png" id="1_veopg"]
 [ext_resource type="Script" uid="uid://d4ijs1wsxi8ky" path="res://main/game/driver/road_background.gd" id="2_road"]
 [ext_resource type="Script" uid="uid://bdndbyuevwp4w" path="res://main/game/camera_2d.gd" id="4_ve711"]
+[ext_resource type="PackedScene" uid="uid://coyvid1k37xms" path="res://main/game/driver/MoneyManager.tscn" id="3_r56b5"]
+[ext_resource type="Texture2D" uid="uid://codmwq3nf4mvx" path="res://assets/art/ui/icon.svg" id="4_ve711"]
 
 [node name="DriverView" type="Node2D" unique_id=356773611]
 script = ExtResource("1_ni8rb")
@@ -42,3 +44,23 @@ offset_top = 16.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 28
 text = "Score: 0"
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneyManager" parent="UI" unique_id=1833557337 instance=ExtResource("3_r56b5")]
+layout_mode = 1
+offset_left = -622.0
+offset_top = -314.0
+offset_right = -622.0
+offset_bottom = -314.0
+
+[node name="TextureButton" type="TextureButton" parent="UI" unique_id=637707343]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 172.0
+offset_right = 538.0
+offset_bottom = 300.0
+texture_normal = ExtResource("4_ve711")
+
+[connection signal="pressed" from="UI/TextureButton" to="." method="_on_texture_button_pressed"]

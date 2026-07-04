@@ -29,6 +29,12 @@ func _ready() -> void:
 	setup_input_actions(); 
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	update_score_display()
+@onready var money_manager: Control = $UI/MoneyManager
+@onready var texture_button: TextureButton = $UI/TextureButton
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	money_manager.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func setup_input_actions() -> void:
@@ -97,3 +103,7 @@ func trigger_game_over() -> void:
 	is_game_over = true
 	GameManager.game_over.emit(score)
 	get_tree().paused = true
+
+func _on_texture_button_pressed() -> void:
+	texture_button.hide()
+	money_manager.show()
