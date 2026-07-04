@@ -1,4 +1,7 @@
 extends Node
+
+signal hide_money_manager
+
 #Environment
 const discount := 0.8
 var passenger_fare:= 15 #placeholder for int from actual passenger
@@ -103,3 +106,7 @@ func _on_confirm_pressed() -> void:
 func _on_clear_pressed() -> void:
 	driver_change = 0
 	display_change()
+
+
+func _on_hide_pressed() -> void:
+	hide_money_manager.emit()

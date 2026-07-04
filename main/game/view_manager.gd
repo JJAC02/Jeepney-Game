@@ -12,9 +12,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()
-	print(mouse_pos)
+	#print(mouse_pos)
 	var viewport_size = get_viewport().get_visible_rect().size
-	print(viewport_size)
+	#print(viewport_size)
 	if mouse_pos.x >= (viewport_size.x - margin):
 		position.x -= pan_speed * delta
 	elif mouse_pos.x <= margin:
