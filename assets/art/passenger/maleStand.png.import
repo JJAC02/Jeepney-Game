@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq6liy54d03it"
-path="res://.godot/imported/ChatGPT_Image_Jul_4__2026__06_02_40_PM__2_-removebg-preview.png-6b1f6d592138404a3e9b22d1be741271.ctex"
+uid="uid://b6ahnvuoxm3if"
+path="res://.godot/imported/maleStand.png-69849bfe4d2aadc8fda0be13665e2431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/passenger/ChatGPT_Image_Jul_4__2026__06_02_40_PM__2_-removebg-preview.png"
-dest_files=["res://.godot/imported/ChatGPT_Image_Jul_4__2026__06_02_40_PM__2_-removebg-preview.png-6b1f6d592138404a3e9b22d1be741271.ctex"]
+source_file="res://assets/art/passenger/maleStand.png"
+dest_files=["res://.godot/imported/maleStand.png-69849bfe4d2aadc8fda0be13665e2431.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdu3g3af34qgo"
-path="res://.godot/imported/oldParapo.png-78d7587f5fc8a109b5878d6ee37a6668.ctex"
+uid="uid://gt4fjpwc5f0i"
+path="res://.godot/imported/oldmalestand.png-00a7a21e232f407d91a8da5c441520c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/passenger/oldParapo.png"
-dest_files=["res://.godot/imported/oldParapo.png-78d7587f5fc8a109b5878d6ee37a6668.ctex"]
+source_file="res://assets/art/passenger/oldmalestand.png"
+dest_files=["res://.godot/imported/oldmalestand.png-00a7a21e232f407d91a8da5c441520c4.ctex"]
 
 [params]
 

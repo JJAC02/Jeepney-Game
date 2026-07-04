@@ -1,9 +1,6 @@
 extends Node2D
 
 var passenger: PackedScene = preload("res://main/game/passenger/Passenger.tscn")
-@onready var male: PackedScene = preload("res://main/game/passenger/male_instance.tscn")
-@onready var female: PackedScene = preload("res://main/game/passenger/female_instance.tscn")
-@onready var old_instance: PackedScene = preload("res://main/game/passenger/old_instance.tscn")
 @onready var timer: Timer = $Timer
 @onready var seat_slots: Node2D = $"../../PassengerView/slots"
 

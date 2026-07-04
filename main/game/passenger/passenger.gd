@@ -5,7 +5,7 @@ signal transfer_me(inst: Node2D)
 @onready var btn: TextureButton = $TextureButton
 @onready var full: Sprite2D = $full
 @onready var passenger_sprite: Sprite2D = $passenger_type
-@onready var label_plite: Label = $fareDisplay/fareBG/Label
+@onready var label_plite: Label = $fareDisplay/fareB/Label
 @onready var fare_display: Node2D = $fareDisplay
 @onready var timer: Timer = $fareDisplay/Timer
 
@@ -15,13 +15,18 @@ signal transfer_me(inst: Node2D)
 @export var female_sit: Texture2D 
 @export var old_stand: Texture2D
 @export var old_sit: Texture2D 
+@export var M_old_sit: Texture2D
+@export var M_old_stand: Texture2D
 
 enum PassengerType {
 	MALE, 
 	FEMALE,
-	OLD
+	F_OLD,
+	M_OLD
 }
 
+var amt: int
+var regular_track_local: bool
 var type_chosen : PassengerType
 var sprites := {}
 func random_plite() -> int:
@@ -30,8 +35,7 @@ func random_plite() -> int:
 	return plite[randi_range(0, (plite.size())-1)]
 	
 func fare_prompt() -> void:
-	var amt := random_plite()
-	GameManager.fare_received = amt
+	amt = random_plite()
 	label_plite.text = str(amt)
 	fare_display.visible = true
 	
@@ -53,9 +57,13 @@ func _ready() -> void:
 				"sit" : female_sit,
 				"stand" : female_stand
 			},
-			PassengerType.OLD : {
+			PassengerType.F_OLD: {
 				"sit" : old_sit,
 				"stand" : old_stand
+			},
+			PassengerType.M_OLD : {
+				"sit" : M_old_sit,
+				"stand" : M_old_stand
 			}
 	}
 	generate_random_passenger_type()
@@ -76,10 +84,10 @@ func go_in(seat_idx: int) -> void:
 
 func generate_random_passenger_type():
 	type_chosen =  PassengerType.values().pick_random()
-	if type_chosen == PassengerType.OLD:
-		GameManager.is_regular = false
+	if type_chosen == PassengerType.M_OLD or type_chosen == PassengerType.F_OLD:
+		regular_track_local = false
 	else:
-		GameManager.is_regular = true
+		regular_track_local = true
 
 func show_full() -> void:
 	btn.hide()
@@ -93,3 +101,7 @@ func _on_texture_button_pressed() -> void:
 func _on_timer_timeout() -> void:
 	fare_prompt()
 	
+func _on_fare_b_pressed() -> void:
+	print("emitted amt: ", amt, regular_track_local)
+	GameManager.fare_received = amt
+	GameManager.is_regular = regular_track_local
