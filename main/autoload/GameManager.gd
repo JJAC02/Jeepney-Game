@@ -22,8 +22,14 @@ var time_remaining: float = 10.0 # in seconds
 var total_money: int = 0
 var total_days: int = 1
 
+#passenger metadata
+var is_regular: bool 
+var fare_received: int
+
+
 # when the game runs for the very first time
 func _initialize_game() -> void:
+	fare_received = 0
 	day = 1
 	money_goal = 100
 	current_view = "driver"
@@ -48,6 +54,7 @@ func update_money(amount: int) -> void:
 func _next_day():
 	day += 1
 	money_goal += 100 # improve difficulty scaling
+	fare_received = 0
 	
 	current_view = "driver"
 	money = 50

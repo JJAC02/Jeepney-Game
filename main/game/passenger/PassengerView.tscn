@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://dbr2l2ycbii07"]
 
 [ext_resource type="Script" uid="uid://yjx0f7vhn7kd" path="res://main/game/passenger/passenger_view.gd" id="1_boad2"]
-[ext_resource type="Texture2D" uid="uid://ded3rj7ewuy67" path="res://assets/art/passenger/backJeep.png" id="2_6w6st"]
+[ext_resource type="Texture2D" uid="uid://dxdimsqu5offy" path="res://assets/art/passenger/backJeep.png" id="2_6w6st"]
 [ext_resource type="Script" uid="uid://bdndbyuevwp4w" path="res://main/game/camera_2d.gd" id="3_h84j3"]
-[ext_resource type="PackedScene" uid="uid://bnqlveksevyue" path="res://main/game/passenger/slots.tscn" id="3_yb8bs"]
 
 [node name="PassengerView" type="Node2D" unique_id=468730665]
 script = ExtResource("1_boad2")
@@ -24,6 +23,52 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="slots" parent="." unique_id=260973931 instance=ExtResource("3_yb8bs")]
-position = Vector2(10, 13)
-scale = Vector2(0.88649064, 0.88649064)
+[node name="slots" type="Node2D" parent="." unique_id=29744692]
+
+[node name="seat1" type="Marker2D" parent="slots" unique_id=1128903634]
+position = Vector2(-224, 33)
+
+[node name="seat2" type="Marker2D" parent="slots" unique_id=69454792]
+position = Vector2(-253, 44)
+
+[node name="seat3" type="Marker2D" parent="slots" unique_id=1122323158]
+position = Vector2(-281, 58)
+
+[node name="seat4" type="Marker2D" parent="slots" unique_id=485993063]
+position = Vector2(-317, 72)
+
+[node name="seat5" type="Marker2D" parent="slots" unique_id=871165997]
+position = Vector2(-353, 84)
+
+[node name="seat6" type="Marker2D" parent="slots" unique_id=1694005089]
+position = Vector2(-398, 100)
+
+[node name="seat7" type="Marker2D" parent="slots" unique_id=1874293731]
+position = Vector2(-454, 120)
+
+[node name="seat8" type="Marker2D" parent="slots" unique_id=65907825]
+position = Vector2(-518, 142)
+
+[node name="seat9" type="Marker2D" parent="slots" unique_id=336484230]
+position = Vector2(233, 37)
+
+[node name="seat10" type="Marker2D" parent="slots" unique_id=530205041]
+position = Vector2(266, 52)
+
+[node name="seat11" type="Marker2D" parent="slots" unique_id=186537968]
+position = Vector2(300, 65)
+
+[node name="seat12" type="Marker2D" parent="slots" unique_id=1386635173]
+position = Vector2(341, 80)
+
+[node name="seat13" type="Marker2D" parent="slots" unique_id=1717555535]
+position = Vector2(388, 95)
+
+[node name="seat14" type="Marker2D" parent="slots" unique_id=1778817002]
+position = Vector2(434, 115)
+
+[node name="seat15" type="Marker2D" parent="slots" unique_id=808759227]
+position = Vector2(476, 132)
+
+[node name="seat16" type="Marker2D" parent="slots" unique_id=351951301]
+position = Vector2(534, 153)
