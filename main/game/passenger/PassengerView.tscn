@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://yjx0f7vhn7kd" path="res://main/game/passenger/passenger_view.gd" id="1_boad2"]
 [ext_resource type="Texture2D" uid="uid://ded3rj7ewuy67" path="res://assets/art/passenger/backJeep.png" id="2_6w6st"]
+[ext_resource type="Script" uid="uid://bdndbyuevwp4w" path="res://main/game/camera_2d.gd" id="3_h84j3"]
 [ext_resource type="PackedScene" uid="uid://bnqlveksevyue" path="res://main/game/passenger/slots.tscn" id="3_yb8bs"]
 
 [node name="PassengerView" type="Node2D" unique_id=468730665]
@@ -15,6 +16,7 @@ texture = ExtResource("2_6w6st")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=339580077]
 scale = Vector2(1.3439847, 1.1384484)
 position_smoothing_enabled = true
+script = ExtResource("3_h84j3")
 
 [node name="Control" type="Control" parent="." unique_id=743685704]
 layout_mode = 3
