@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dxjjiashrwrx4" path="res://main/game/driver/driver_view.gd" id="1_ni8rb"]
 [ext_resource type="Texture2D" uid="uid://dbxlw2w50tib8" path="res://assets/placeholders/pixel_art_windshield.png" id="1_veopg"]
+[ext_resource type="Script" uid="uid://d4ijs1wsxi8ky" path="res://main/game/driver/road_background.gd" id="2_road"]
+[ext_resource type="Script" uid="uid://bdndbyuevwp4w" path="res://main/game/camera_2d.gd" id="4_ve711"]
 [ext_resource type="PackedScene" uid="uid://coyvid1k37xms" path="res://main/game/driver/MoneyManager.tscn" id="3_r56b5"]
 [ext_resource type="Texture2D" uid="uid://codmwq3nf4mvx" path="res://assets/art/ui/icon.svg" id="4_ve711"]
 
 [node name="DriverView" type="Node2D" unique_id=356773611]
 script = ExtResource("1_ni8rb")
-metadata/_edit_vertical_guides_ = [-626.0]
+metadata/_edit_vertical_guides_ = [-500.0, 500.0]
 metadata/_edit_horizontal_guides_ = [-470.0]
+
+[node name="RoadBackground" type="Node2D" parent="." unique_id=1677446058]
+script = ExtResource("2_road")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1398227930]
+wait_time = 2.0
+autostart = true
+
+[node name="ObstacleContainer" type="Node2D" parent="." unique_id=331905984]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1156940859]
 scale = Vector2(1.0491071, 1.0491072)
@@ -16,9 +27,23 @@ texture = ExtResource("1_veopg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1184564528]
 position_smoothing_enabled = true
+script = ExtResource("4_ve711")
 
 [node name="UI" type="Control" parent="." unique_id=1412966910]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=2039301724]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Score: 0"
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

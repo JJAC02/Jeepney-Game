@@ -3,11 +3,22 @@ extends Node2D
 @onready var driver_view: Camera2D = $DriverView/Camera2D
 @onready var passenger_view: Camera2D = $PassengerView/Camera2D
 
+var pan_speed: float = 200
+var margin: float = 225
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	driver_view.make_current()
-	#$DriverView.change_view.connect(switch_view)
-	#$PassengerView.change_view.connect(switch_view)
+
+func _process(delta: float) -> void:
+	var mouse_pos = get_viewport().get_mouse_position()
+	print(mouse_pos)
+	var viewport_size = get_viewport().get_visible_rect().size
+	print(viewport_size)
+	if mouse_pos.x >= (viewport_size.x - margin):
+		position.x -= pan_speed * delta
+	elif mouse_pos.x <= margin:
+		position.x += pan_speed * delta
 
 func switch_view(current_view: String) -> void:
 	if current_view == "driver":
