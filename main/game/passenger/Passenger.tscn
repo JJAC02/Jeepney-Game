@@ -1,24 +1,28 @@
 [gd_scene format=3 uid="uid://bt1puoct7j11l"]
 
 [ext_resource type="Script" uid="uid://xda8oj637pac" path="res://main/game/passenger/passenger.gd" id="1_3egj2"]
-[ext_resource type="Texture2D" uid="uid://da1qvq20vmews" path="res://assets/art/passenger/wavePass-removebg-preview.png" id="2_47amf"]
-[ext_resource type="Texture2D" uid="uid://c2dm73eh18u2h" path="res://assets/art/passenger/malePass-removebg-preview.png" id="3_r0178"]
-[ext_resource type="Texture2D" uid="uid://cn7p6plymx0oh" path="res://assets/art/passenger/femaleParapo.png" id="4_3piem"]
+[ext_resource type="Texture2D" uid="uid://b6ahnvuoxm3if" path="res://assets/art/passenger/maleStand.png" id="2_3piem"]
+[ext_resource type="Texture2D" uid="uid://cm2uy682gtxhu" path="res://assets/art/passenger/maleSit.png" id="3_tto58"]
+[ext_resource type="Texture2D" uid="uid://cqv7he50w3mj8" path="res://assets/art/passenger/standingMalee.png" id="4_3piem"]
 [ext_resource type="Texture2D" uid="uid://d0i6c7yfb28tv" path="res://assets/art/passenger/pickup.png" id="4_ub4pc"]
 [ext_resource type="Texture2D" uid="uid://bg3ktk7uple4u" path="res://assets/art/passenger/full.png" id="5_d4yvj"]
-[ext_resource type="Texture2D" uid="uid://j5ge5aggrbhe" path="res://assets/art/passenger/sittingFemale.png" id="5_tto58"]
-[ext_resource type="Texture2D" uid="uid://cdu3g3af34qgo" path="res://assets/art/passenger/oldParapo.png" id="6_5m0dd"]
+[ext_resource type="Texture2D" uid="uid://cipnvtv5obf13" path="res://assets/art/passenger/sittingMale3.png" id="5_tto58"]
+[ext_resource type="Texture2D" uid="uid://b7x2eshkvjkec" path="res://assets/art/passenger/femaleOld.png" id="6_3piem"]
 [ext_resource type="Texture2D" uid="uid://cg5i62g1l71ll" path="res://assets/art/passenger/fareBubble-removebg-preview.png" id="6_khtnn"]
-[ext_resource type="Texture2D" uid="uid://cq6liy54d03it" path="res://assets/art/passenger/ChatGPT_Image_Jul_4__2026__06_02_40_PM__2_-removebg-preview.png" id="7_164pa"]
+[ext_resource type="Texture2D" uid="uid://nuhbm2einojo" path="res://assets/art/passenger/femaleOldsit.png" id="7_tto58"]
+[ext_resource type="Texture2D" uid="uid://v0s80rjttu8r" path="res://assets/art/passenger/maleoldsit.png" id="8_5m0dd"]
+[ext_resource type="Texture2D" uid="uid://gt4fjpwc5f0i" path="res://assets/art/passenger/oldmalestand.png" id="9_164pa"]
 
 [node name="Passenger" type="Node2D" unique_id=690937619]
 script = ExtResource("1_3egj2")
-male_stand = ExtResource("2_47amf")
-male_sit = ExtResource("3_r0178")
+male_stand = ExtResource("2_3piem")
+male_sit = ExtResource("3_tto58")
 female_stand = ExtResource("4_3piem")
 female_sit = ExtResource("5_tto58")
-old_stand = ExtResource("6_5m0dd")
-old_sit = ExtResource("7_164pa")
+old_stand = ExtResource("6_3piem")
+old_sit = ExtResource("7_tto58")
+M_old_sit = ExtResource("8_5m0dd")
+M_old_stand = ExtResource("9_164pa")
 
 [node name="passenger_type" type="Sprite2D" parent="." unique_id=811452953]
 
@@ -37,22 +41,26 @@ texture = ExtResource("5_d4yvj")
 
 [node name="fareDisplay" type="Node2D" parent="." unique_id=462702289]
 
-[node name="fareBG" type="Sprite2D" parent="fareDisplay" unique_id=1822691374]
-position = Vector2(-4.369999, -102)
-scale = Vector2(0.09, 0.09)
-texture = ExtResource("6_khtnn")
+[node name="fareB" type="TextureButton" parent="fareDisplay" unique_id=895573711]
+offset_left = -43.0
+offset_top = -129.0
+offset_right = 823.0
+offset_bottom = 159.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("6_khtnn")
 
-[node name="Label" type="Label" parent="fareDisplay/fareBG" unique_id=1451566517]
+[node name="Label" type="Label" parent="fareDisplay/fareB" unique_id=1451566517]
 custom_minimum_size = Vector2(0.1, 0)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -577.8515
-offset_top = -243.00992
-offset_right = -523.8515
-offset_bottom = -220.00992
+offset_left = -144.95004
+offset_top = -97.912
+offset_right = -90.95004
+offset_bottom = -74.91199
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.2370267, 5.2370267)
@@ -63,4 +71,5 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="fareDisplay" unique_id=807668880]
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="fareDisplay/fareB" to="." method="_on_fare_b_pressed"]
 [connection signal="timeout" from="fareDisplay/Timer" to="." method="_on_timer_timeout"]

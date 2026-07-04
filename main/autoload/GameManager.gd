@@ -26,7 +26,6 @@ var total_days: int = 1
 var is_regular: bool 
 var fare_received: int
 
-
 # when the game runs for the very first time
 func _initialize_game() -> void:
 	fare_received = 0
