@@ -1,34 +1,66 @@
 [gd_scene format=3 uid="uid://bt1puoct7j11l"]
 
 [ext_resource type="Script" uid="uid://xda8oj637pac" path="res://main/game/passenger/passenger.gd" id="1_3egj2"]
-[ext_resource type="Texture2D" uid="uid://cnmnkxt56tib2" path="res://assets/art/passenger/wavePass-removebg-preview.png" id="2_d4yvj"]
-[ext_resource type="Texture2D" uid="uid://bexplygoad5uy" path="res://assets/art/passenger/malePass-removebg-preview.png" id="3_d4yvj"]
-[ext_resource type="Texture2D" uid="uid://dd5re08nww441" path="res://assets/art/passenger/pickup.png" id="4_ub4pc"]
-[ext_resource type="Texture2D" uid="uid://bdpsgcylmi8ra" path="res://assets/art/passenger/full.png" id="5_d4yvj"]
+[ext_resource type="Texture2D" uid="uid://da1qvq20vmews" path="res://assets/art/passenger/wavePass-removebg-preview.png" id="2_47amf"]
+[ext_resource type="Texture2D" uid="uid://c2dm73eh18u2h" path="res://assets/art/passenger/malePass-removebg-preview.png" id="3_r0178"]
+[ext_resource type="Texture2D" uid="uid://cn7p6plymx0oh" path="res://assets/art/passenger/femaleParapo.png" id="4_3piem"]
+[ext_resource type="Texture2D" uid="uid://d0i6c7yfb28tv" path="res://assets/art/passenger/pickup.png" id="4_ub4pc"]
+[ext_resource type="Texture2D" uid="uid://bg3ktk7uple4u" path="res://assets/art/passenger/full.png" id="5_d4yvj"]
+[ext_resource type="Texture2D" uid="uid://j5ge5aggrbhe" path="res://assets/art/passenger/sittingFemale.png" id="5_tto58"]
+[ext_resource type="Texture2D" uid="uid://cdu3g3af34qgo" path="res://assets/art/passenger/oldParapo.png" id="6_5m0dd"]
+[ext_resource type="Texture2D" uid="uid://cg5i62g1l71ll" path="res://assets/art/passenger/fareBubble-removebg-preview.png" id="6_khtnn"]
+[ext_resource type="Texture2D" uid="uid://cq6liy54d03it" path="res://assets/art/passenger/ChatGPT_Image_Jul_4__2026__06_02_40_PM__2_-removebg-preview.png" id="7_164pa"]
 
 [node name="Passenger" type="Node2D" unique_id=690937619]
 script = ExtResource("1_3egj2")
+male_stand = ExtResource("2_47amf")
+male_sit = ExtResource("3_r0178")
+female_stand = ExtResource("4_3piem")
+female_sit = ExtResource("5_tto58")
+old_stand = ExtResource("6_5m0dd")
+old_sit = ExtResource("7_164pa")
 
-[node name="paraPo" type="Sprite2D" parent="." unique_id=1925670290]
-scale = Vector2(0.531, 0.531)
-texture = ExtResource("2_d4yvj")
-
-[node name="sitting" type="Sprite2D" parent="." unique_id=1395879921]
-position = Vector2(1.0000916, 0.9999962)
-scale = Vector2(0.531, 0.531)
-texture = ExtResource("3_d4yvj")
+[node name="passenger_type" type="Sprite2D" parent="." unique_id=811452953]
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1061079813]
-offset_left = -101.00003
-offset_top = -186.0
-offset_right = 2407.0
-offset_bottom = 441.0
-scale = Vector2(0.08005891, 0.07465402)
+offset_left = -47.0
+offset_top = -127.0
+offset_right = 2461.0
+offset_bottom = 500.0
+scale = Vector2(0.03723202, 0.03471843)
 texture_normal = ExtResource("4_ub4pc")
 
 [node name="full" type="Sprite2D" parent="." unique_id=1340271161]
-position = Vector2(0, -159)
+position = Vector2(0, -117)
 scale = Vector2(0.104055956, 0.07924356)
 texture = ExtResource("5_d4yvj")
 
+[node name="fareDisplay" type="Node2D" parent="." unique_id=462702289]
+
+[node name="fareBG" type="Sprite2D" parent="fareDisplay" unique_id=1822691374]
+position = Vector2(-4.369999, -102)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("6_khtnn")
+
+[node name="Label" type="Label" parent="fareDisplay/fareBG" unique_id=1451566517]
+custom_minimum_size = Vector2(0.1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.8515
+offset_top = -243.00992
+offset_right = -523.8515
+offset_bottom = -220.00992
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.2370267, 5.2370267)
+theme_override_colors/font_color = Color(0.12955841, 0.1295585, 0.12955844, 1)
+text = "t"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="fareDisplay" unique_id=807668880]
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="fareDisplay/Timer" to="." method="_on_timer_timeout"]
