@@ -123,6 +123,7 @@ text = "1,000,000"
 
 [node name="Timer" type="Timer" parent="." unique_id=213752816]
 wait_time = 10.0
+one_shot = true
 
 [node name="GameOver" type="Label" parent="." unique_id=2146202473]
 layout_mode = 0

@@ -91,7 +91,7 @@ func _on_call_game_over(reason: String) -> void:
 
 # back to main menu
 func _on_main_menu() -> void:
-	#timer.paused = false
+	timer.paused = false
 	timer.stop()
 	view_manager.process_mode = PROCESS_MODE_DISABLED
 	
@@ -116,5 +116,6 @@ func _on_unpause_pressed() -> void:
 
 func _on_restart_game() -> void:
 	timer.paused = false
+	timer.stop()
 	GameManager.absolute_restart_variables()
 	_on_game_started()

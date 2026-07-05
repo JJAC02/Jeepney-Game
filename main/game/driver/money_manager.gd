@@ -65,10 +65,10 @@ func display_change() -> void:
 
 func display_commuter_details() -> void:
 	var available_discount = roundi((1 - discount) * 100)
-	$display_total_d_money.text = "Total DM: " + str(GameManager.money)
-	$commuter_paid_display.text = "Commuter Gave: " + str(commuter_paid)
-	$commuter_type_display.text = "Type: " + commuter_type
-	$discount_details.text = "Students, Senior Citizens, and PWDs\n can avail a " + str(available_discount) + "%"
+	#$display_total_d_money.text = "Total DM: " + str(GameManager.money)
+	#$commuter_paid_display.text = "Commuter Gave: " + str(commuter_paid)
+	#$commuter_type_display.text = "Type: " + commuter_type
+	#$discount_details.text = "Students, Senior Citizens, and PWDs\n can avail a " + str(available_discount) + "%"
 #Button Functions
 func _on_add_1_peso_pressed() -> void:
 	add_change_value(1)
