@@ -6,6 +6,8 @@ extends Node
 
 @warning_ignore("unused_signal") signal game_over
 
+@warning_ignore("unused_signal") signal accommodate_fare(amt: int, is_regular: bool, inst: Node2D)
+
 # variables persist over different days
 var day: int = 1
 var money_goal: int = 100

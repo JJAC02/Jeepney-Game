@@ -9,6 +9,7 @@ var margin: float = 225
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	driver_view.make_current()
+	
 
 func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()

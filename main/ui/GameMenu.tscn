@@ -29,6 +29,7 @@ offset_right = 98.5
 offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 76
 theme_override_styles/normal = SubResource("StyleBoxFlat_rwxg5")
 text = "BACK"

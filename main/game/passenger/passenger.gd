@@ -8,7 +8,7 @@ signal transfer_me(inst: Node2D)
 @onready var label_plite: Label = $fareDisplay/fareB/Label
 @onready var fare_display: Node2D = $fareDisplay
 @onready var timer: Timer = $fareDisplay/Timer
-
+@onready var dropoff_timer: Timer = $Timer
 @export var male_stand: Texture2D 
 @export var male_sit: Texture2D 
 @export var female_stand: Texture2D
@@ -17,6 +17,7 @@ signal transfer_me(inst: Node2D)
 @export var old_sit: Texture2D 
 @export var M_old_sit: Texture2D
 @export var M_old_stand: Texture2D
+
 
 enum PassengerType {
 	MALE, 
@@ -30,7 +31,7 @@ var regular_track_local: bool
 var type_chosen : PassengerType
 var sprites := {}
 func random_plite() -> int:
-	var plite : Array[int] = [14, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+	var plite : Array[int] = [15, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 	
 	return plite[randi_range(0, (plite.size())-1)]
 	
@@ -40,8 +41,9 @@ func fare_prompt() -> void:
 	fare_display.visible = true
 	
 
+
 func plite_timeout() -> void:
-	timer.wait_time = randf_range(2.00, 10.00)
+	timer.wait_time = randf_range(1.00, 5.00)
 	timer.one_shot = true
 	timer.start()
 
@@ -95,13 +97,20 @@ func show_full() -> void:
 
 func _on_texture_button_pressed() -> void:
 	print("emitting pickup")
-	print(GameManager.is_regular)
 	transfer_me.emit(self)
 	
 func _on_timer_timeout() -> void:
 	fare_prompt()
 	
 func _on_fare_b_pressed() -> void:
+	GameManager.accommodate_fare.emit(amt, regular_track_local, self)
 	print("emitted amt: ", amt, regular_track_local)
-	GameManager.fare_received = amt
-	GameManager.is_regular = regular_track_local
+
+func change_recv() -> void:
+	fare_display.queue_free()
+	dropoff_timer.wait_time = randf_range(2.00, 4.00)
+	dropoff_timer.one_shot = true
+	dropoff_timer.start()
+	
+func _on_timer_dropoff_timeout() -> void:
+	self.queue_free()
