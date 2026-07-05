@@ -7,7 +7,7 @@ func _on_resume_pressed() -> void:
 
 
 func _on_menu_pressed() -> void:
-	GameManager.back_to_main_menu.emit(self)
+	GameManager.back_to_main_menu.emit()
 
 
 func _on_restart_pressed() -> void:

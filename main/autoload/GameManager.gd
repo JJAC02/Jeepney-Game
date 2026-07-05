@@ -26,15 +26,7 @@ var total_points: int = 0
 func _ready() -> void:
 	# Keep singleton active even when scene tree pauses
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	reset_variables()
-	
-	day = 1
-	money_goal = 100
-	
-	total_money = 0
-	total_days = 1
-	total_passengers = 0
-	total_points = 0
+	absolute_restart_variables()
 
 
 func reset_variables():
@@ -57,6 +49,12 @@ func _next_day():
 	# reset variables
 	reset_variables()
 
-# restart as in reestart the whole run
-#func restart_game():
-	#reset_variables()
+func absolute_restart_variables():
+	reset_variables()
+	day = 1
+	money_goal = 100
+	
+	total_money = 0
+	total_days = 1
+	total_passengers = 0
+	total_points = 0

@@ -25,7 +25,7 @@ func _ready() -> void:
 	# conenct global signals
 	GameManager.game_started.connect(_on_game_started)
 	GameManager.game_over.connect(_on_call_game_over)
-	GameManager.restart_game.connect(_on_game_started)
+	GameManager.restart_game.connect(_on_restart_game)
 	GameManager.back_to_main_menu.connect(_on_main_menu)
 	
 	# pause running gameplay nodes
@@ -43,6 +43,7 @@ func _on_game_started() -> void:
 	
 	# unpause running gameplay nodes
 	view_manager.process_mode = PROCESS_MODE_INHERIT
+	view_manager._ready()
 	
 	# set timer and start
 	timer.wait_time = GameManager.time_remaining
@@ -113,6 +114,7 @@ func _on_unpause_pressed() -> void:
 	pause_menu.hide()
 	timer.paused = false
 
-# game over restart button is pressed
-func _on_game_over_restart() -> void:
-	pass # Replace with function body.
+func _on_restart_game() -> void:
+	timer.paused = false
+	GameManager.absolute_restart_variables()
+	_on_game_started()
