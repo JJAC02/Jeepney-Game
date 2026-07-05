@@ -39,6 +39,8 @@ position = Vector2(0, -117)
 scale = Vector2(0.104055956, 0.07924356)
 texture = ExtResource("5_d4yvj")
 
+[node name="Timer" type="Timer" parent="." unique_id=1044470438]
+
 [node name="fareDisplay" type="Node2D" parent="." unique_id=462702289]
 
 [node name="fareB" type="TextureButton" parent="fareDisplay" unique_id=895573711]
@@ -48,6 +50,7 @@ offset_right = 823.0
 offset_bottom = 159.0
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("6_khtnn")
+texture_pressed = ExtResource("5_d4yvj")
 
 [node name="Label" type="Label" parent="fareDisplay/fareB" unique_id=1451566517]
 custom_minimum_size = Vector2(0.1, 0)
@@ -71,5 +74,6 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="fareDisplay" unique_id=807668880]
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_dropoff_timeout"]
 [connection signal="pressed" from="fareDisplay/fareB" to="." method="_on_fare_b_pressed"]
 [connection signal="timeout" from="fareDisplay/Timer" to="." method="_on_timer_timeout"]

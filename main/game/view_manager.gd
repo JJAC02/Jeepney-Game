@@ -13,6 +13,7 @@ func _ready() -> void:
 		for grandchild in child.get_children():
 			grandchild.queue_free()
 	driver_view.make_current()
+	
 
 func _process(delta: float) -> void:
 	var mouse_pos = get_viewport().get_mouse_position()

@@ -10,38 +10,35 @@ signal confirmed
 
 
 #Environment
-const discount := 0.8
 var passenger_fare:= 15 #placeholder for int from actual passenger
 var driver_change := 0 #the amount to change when adding or subtracting
+var total_driver_money := GameManager.money #GameManager.money for total driver money
 var stress_bar_ph = 0
-#GameManager.money for total DM money
-
+var discount : String
 
 #Passenger/Commuter-Based
-var commuter_paid := 40 # 40 placeholder for testing
-var commuter_type := 'Student'
+var commuter_paid :int= 0
 var commuter_actual_fare:= 0
 var commuter_change := 0
+var commuter_type : String
 
+#metadata
+var regular: bool
+var instance: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	display_commuter_details()
-	calculate_change()
-	display_change()
+	GameManager.accommodate_fare.connect(display_commuter_details)
+	display_init()
+	#display_commuter_details()
+	#calculate_change()
+	#display_change()
 
 #General Functions
 func calculate_change():
-	#hidden function for checking if right change is given to passenger
-	if commuter_type == 'Regular':
-		commuter_actual_fare = passenger_fare
-	else:
-		commuter_actual_fare = roundi(passenger_fare * discount)
-	print(commuter_actual_fare);
-	commuter_change = commuter_paid - commuter_actual_fare
-	print(commuter_actual_fare)
+	print("fare: ", commuter_actual_fare)
 	commuter_change = commuter_paid - passenger_fare
-	print(commuter_change)
+	print("supposed change: ", commuter_change)
 
 func value_Checker() -> void:
 	if driver_change < 0:
@@ -60,15 +57,27 @@ func subtract_change_value(passedValue:int) -> void:
 	display_change()
 
 func display_change() -> void:
-	#$change_display.text = "Change: " + str(driver_change)
-	pass
+	$change_display.text = "Change: " + str(driver_change)
 
-func display_commuter_details() -> void:
-	var available_discount = roundi((1 - discount) * 100)
-	#$display_total_d_money.text = "Total DM: " + str(GameManager.money)
-	#$commuter_paid_display.text = "Commuter Gave: " + str(commuter_paid)
-	#$commuter_type_display.text = "Type: " + commuter_type
-	#$discount_details.text = "Students, Senior Citizens, and PWDs\n can avail a " + str(available_discount) + "%"
+func display_init() -> void:
+	$display_total_d_money.text = "Total DM: " + str(total_driver_money)
+	$commuter_paid_display.text = "Commuter Gave: "
+	$commuter_type_display.text = "Type: "
+	$discount_details.text = "Fare: "
+	$change_display.text = "Change: "
+
+
+func display_commuter_details(amt: int, is_regular: bool, inst: Node2D) -> void:
+	commuter_paid = amt
+	regular = is_regular
+	instance = inst
+	total_driver_money += commuter_paid
+	passenger_fare = 12 if !regular else 15
+	$display_total_d_money.text = "Total DM: " + str(total_driver_money)
+	$commuter_paid_display.text = "Commuter Gave: " + str(commuter_paid)
+	commuter_type = "Regular" if GameManager.is_regular == true else "Discounted"
+	$commuter_type_display.text = "Type: " + commuter_type
+	$discount_details.text = "Fare: " + str(passenger_fare)
 #Button Functions
 func _on_add_1_peso_pressed() -> void:
 	add_change_value(1)
@@ -106,12 +115,30 @@ func _on_confirm_pressed() -> void:
 	driver_change = 0
 	calculate_change()
 	display_change()
-
+	if driver_change < commuter_change :
+		print('kulang')
+		stress_bar_ph += 1
+		print(stress_bar_ph)
+		
+	elif driver_change > commuter_change:
+		print("d ", driver_change, " c ", commuter_change)
+		print("wrong change")
+		print('you lose money') #implement code
+		stress_bar_ph += 1
+		print(stress_bar_ph)
+		
+	else:
+		print("correct")
+		
+	instance.change_recv()
+	total_driver_money -= driver_change  #revisit for Node
+	#display_commuter_details()
+	driver_change = 0
+	display_init()
 	
 func _on_clear_pressed() -> void:
 	driver_change = 0
-	display_change()
-
+	display_commuter_details(commuter_paid, regular, instance)
 
 func _on_hide_pressed() -> void:
 	hide_money_manager.emit()
