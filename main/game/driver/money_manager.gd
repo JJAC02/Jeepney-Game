@@ -22,6 +22,7 @@ var instance: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.accommodate_fare.connect(display_commuter_details)
 	display_init()
 	#display_commuter_details()
 	#calculate_change()
@@ -57,14 +58,15 @@ func display_init() -> void:
 	$commuter_paid_display.text = "Commuter Gave: "
 	$commuter_type_display.text = "Type: "
 	$discount_details.text = "Fare: "
-	GameManager.accommodate_fare.connect(display_commuter_details)
+	$change_display.text = "Change: "
+
 
 func display_commuter_details(amt: int, is_regular: bool, inst: Node2D) -> void:
 	commuter_paid = amt
 	regular = is_regular
 	instance = inst
 	total_driver_money += commuter_paid
-	passenger_fare = 12 if !regular else 0
+	passenger_fare = 12 if !regular else 15
 	$display_total_d_money.text = "Total DM: " + str(total_driver_money)
 	$commuter_paid_display.text = "Commuter Gave: " + str(commuter_paid)
 	commuter_type = "Regular" if GameManager.is_regular == true else "Discounted"
@@ -108,7 +110,7 @@ func _on_confirm_pressed() -> void:
 	total_driver_money -= driver_change  #revisit for Node
 	#display_commuter_details()
 	driver_change = 0
-
+	display_init()
 	
 func _on_clear_pressed() -> void:
 	driver_change = 0

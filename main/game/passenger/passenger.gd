@@ -107,7 +107,7 @@ func _on_fare_b_pressed() -> void:
 	print("emitted amt: ", amt, regular_track_local)
 
 func change_recv() -> void:
-	fare_display.queue_free()
+	self.remove_child(fare_display)
 	dropoff_timer.wait_time = randf_range(2.00, 4.00)
 	dropoff_timer.one_shot = true
 	dropoff_timer.start()
