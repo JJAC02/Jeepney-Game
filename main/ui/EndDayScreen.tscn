@@ -1,45 +1,24 @@
 [gd_scene format=3 uid="uid://wg7mfsjwy8er"]
 
 [ext_resource type="Script" uid="uid://bj5y1cblkbrhs" path="res://main/ui/end_day_screen.gd" id="1_2rfcw"]
-[ext_resource type="Texture2D" uid="uid://dyfg14ybuqh20" path="res://assets/placeholders/MainMenuLogo.png" id="1_xfri2"]
-[ext_resource type="FontFile" uid="uid://cv3o1vdf6uie0" path="res://assets/art/ui/fonts/pirkkala.ttf" id="2_jlx1i"]
+[ext_resource type="Texture2D" uid="uid://da6ot5nf4257i" path="res://assets/art/ui/EndDayButtons&Panels/endOfTheDay.png" id="2_8aclg"]
+[ext_resource type="Texture2D" uid="uid://87mn5ymucop5" path="res://assets/art/ui/EndDayButtons&Panels/nextday.png" id="3_0tbf1"]
+[ext_resource type="Texture2D" uid="uid://d1frmvbfjvoyx" path="res://assets/art/ui/EndDayButtons&Panels/nxtDy.png" id="4_mu7gg"]
+[ext_resource type="Texture2D" uid="uid://b2yeq60jv04jl" path="res://assets/art/ui/EndDayButtons&Panels/saveLDRBRDS.png" id="5_0tbf1"]
+[ext_resource type="Texture2D" uid="uid://0esqc13qel08" path="res://assets/art/ui/EndDayButtons&Panels/saveldrbrs.png" id="6_c0m3o"]
+[ext_resource type="FontFile" uid="uid://bvcsh66ll2giu" path="res://assets/art/ui/fonts/upheavtt.ttf" id="7_mu7gg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kxuq"]
-bg_color = Color(0, 0, 0, 0.46666667)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_grmc2"]
+texture = ExtResource("2_8aclg")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 16.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_515ve"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.3372549)
-shadow_size = 5
-shadow_offset = Vector2(1.395, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tbf1"]
-bg_color = Color(0.7655279, 0.8732298, 7.70092e-07, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.3372549)
-shadow_size = 5
-shadow_offset = Vector2(1.395, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu7gg"]
-bg_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.3372549)
-shadow_size = 5
-shadow_offset = Vector2(1.395, 3.41)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvrr7"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0tbf1"]
 
 [node name="EndDayScreen" type="Control" unique_id=1942917826]
+process_mode = 4
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,75 +27,117 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2rfcw")
 
-[node name="Panel" type="Panel" parent="." unique_id=56599430]
+[node name="Panel" type="Panel" parent="." unique_id=1389905782]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4kxuq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=881993129]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1837627473]
+propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -167.5
-offset_top = 29.0
-offset_right = 167.5
-offset_bottom = 217.0
+offset_left = -366.0
+offset_top = -264.0
+offset_right = 327.66687
+offset_bottom = 311.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+rotation = -6.2831855
+theme_override_styles/panel = SubResource("StyleBoxTexture_grmc2")
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=528901326]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=751951683]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 0
+offset_left = 318.0001
+offset_top = 605.5
+offset_right = 922.0001
+offset_bottom = 655.5
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 4
+
+[node name="NextDay" type="TextureButton" parent="HBoxContainer" unique_id=502187519]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_jlx1i")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_515ve")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0tbf1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mu7gg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wvrr7")
-text = "Next Day"
+texture_normal = ExtResource("3_0tbf1")
+texture_pressed = SubResource("CompressedTexture2D_0tbf1")
+texture_hover = ExtResource("4_mu7gg")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1661945433]
+[node name="MainMenu" type="TextureButton" parent="HBoxContainer" unique_id=1842902477]
+custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_jlx1i")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_515ve")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0tbf1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mu7gg")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wvrr7")
-text = "Back to Main Menu"
+texture_normal = ExtResource("5_0tbf1")
+texture_pressed = ExtResource("6_c0m3o")
+texture_hover = ExtResource("6_c0m3o")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1071229345]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -306.87537
-offset_top = -300.0
-offset_right = 306.87537
-offset_bottom = 46.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_xfri2")
-expand_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=457673284]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 234.0
+offset_right = 902.0
+offset_bottom = 586.0
+theme_override_constants/separation = 39
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_menu_pressed"]
+[node name="total_fare" type="Label" parent="VBoxContainer" unique_id=1543475454]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_mu7gg")
+theme_override_font_sizes/font_size = 40
+text = "Php 100.00"
+
+[node name="passengers_served" type="Label" parent="VBoxContainer" unique_id=721187157]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_mu7gg")
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="fatigue" type="Label" parent="VBoxContainer" unique_id=1719369179]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_mu7gg")
+theme_override_font_sizes/font_size = 40
+text = "5.0"
+
+[node name="fuel_cost" type="Label" parent="VBoxContainer" unique_id=823347935]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_mu7gg")
+theme_override_font_sizes/font_size = 40
+text = "- Php 100.00"
+
+[node name="total_points" type="Label" parent="VBoxContainer" unique_id=1809179450]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.7137255, 0.16862746, 1)
+theme_override_fonts/font = ExtResource("7_mu7gg")
+theme_override_font_sizes/font_size = 40
+text = "1,000,000"
+
+[node name="Timer" type="Timer" parent="." unique_id=213752816]
+wait_time = 10.0
+
+[node name="GameOver" type="Label" parent="." unique_id=2146202473]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 589.0
+offset_right = 955.0
+offset_bottom = 661.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_mu7gg")
+theme_override_font_sizes/font_size = 79
+text = "GAME OVER!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/NextDay" to="." method="_on_next_day_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainMenu" to="." method="_on_menu_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

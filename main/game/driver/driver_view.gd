@@ -26,14 +26,14 @@ var is_game_over: bool = false
 
 # money manager
 @onready var money_manager: Control = $UI/MoneyManager
-@onready var texture_button: TextureButton = $UI/TextureButton
+@onready var change: TextureButton = $UI/change
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	money_manager.hide()
 	setup_input_actions(); 
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
-	update_score_display()
+	#update_score_display()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func setup_input_actions() -> void:
@@ -77,36 +77,36 @@ func _on_spawn_timer_timeout() -> void:
 	var random_lane = [Lane.LEFT, Lane.CENTER, Lane.RIGHT].pick_random()
 	var obstacle = obstacle_scene.instantiate()
 	obstacle_container.add_child(obstacle)
-	obstacle.reached_windshield.connect(_on_obstacle_reached_windshield)
+	#obstacle.reached_windshield.connect(_on_obstacle_reached_windshield)
 	obstacle.setup(random_lane, 0.8)
 
-func _on_obstacle_reached_windshield(obstacle_lane: int) -> void:
-	if obstacle_lane == current_lane:
-		trigger_game_over()
-	else:
-		add_score(10)
-
-func add_score(amount: int) -> void:
-	score += amount
-	update_score_display()
+#func _on_obstacle_reached_windshield(obstacle_lane: int) -> void:
+	#if obstacle_lane == current_lane:
+		#trigger_game_over()
+	#else:
+		#add_score(10)
+#
+#func add_score(amount: int) -> void:
+	#score += amount
+	#update_score_display()
 
 func animate_lane_shift() -> void:
 	# placeholder — will drive AnimatedSprite2D later
 	pass
 
-func update_score_display() -> void:
-	if score_label:
-		score_label.text = "Score: " + str(score)
+#func update_score_display() -> void:
+	#if score_label:
+		#score_label.text = "Score: " + str(score)
+#
+#func trigger_game_over() -> void:
+	#is_game_over = true
+	#GameManager.game_over.emit(score)
+	#get_tree().paused = true
 
-func trigger_game_over() -> void:
-	is_game_over = true
-	GameManager.game_over.emit(score)
-	get_tree().paused = true
-
-func _on_texture_button_pressed() -> void:
-	texture_button.hide()
+func _on_show_money_manager_pressed() -> void:
+	change.hide()
 	money_manager.show()
 
 func _on_hide_money_manager() -> void:
 	money_manager.hide()
-	texture_button.show()
+	change.show()

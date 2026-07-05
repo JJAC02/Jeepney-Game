@@ -1,122 +1,150 @@
 [gd_scene format=3 uid="uid://c0yb3w1v4esjp"]
 
-[ext_resource type="FontFile" uid="uid://cv3o1vdf6uie0" path="res://assets/art/ui/fonts/pirkkala.ttf" id="1_jxg11"]
 [ext_resource type="Script" uid="uid://b51rlgxa1wivw" path="res://main/ui/game_over_screen.gd" id="1_nxtx2"]
-[ext_resource type="Texture2D" uid="uid://dyfg14ybuqh20" path="res://assets/placeholders/MainMenuLogo.png" id="2_nxtx2"]
+[ext_resource type="Texture2D" uid="uid://cftiatw0x8aml" path="res://assets/art/ui/GameOverButton&Panels/tryAgain.png" id="2_goal7"]
+[ext_resource type="Texture2D" uid="uid://bbhu360ys8wcp" path="res://assets/art/ui/GameOverButton&Panels/tryAgainHover.png" id="3_0pqcl"]
+[ext_resource type="Texture2D" uid="uid://drw4gn1wl3wc5" path="res://assets/art/ui/GameOverButton&Panels/mainMenuHover.png" id="4_gug23"]
+[ext_resource type="Texture2D" uid="uid://dd2uxuomjq44j" path="res://assets/art/ui/GameOverButton&Panels/mainMenu.png" id="5_yhtj8"]
+[ext_resource type="Texture2D" uid="uid://m14oxnh7tcyv" path="res://assets/art/ui/GameOverButton&Panels/gameOverPanel.png" id="6_35maq"]
+[ext_resource type="FontFile" uid="uid://bvcsh66ll2giu" path="res://assets/art/ui/fonts/upheavtt.ttf" id="7_xud6o"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv24m"]
-bg_color = Color(0, 0, 0, 0.46666667)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrivr"]
+texture = ExtResource("6_35maq")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lem73"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.3372549)
-shadow_size = 5
-shadow_offset = Vector2(1.395, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x5b8"]
-bg_color = Color(0.7655279, 0.8732298, 7.70092e-07, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.3372549)
-shadow_size = 5
-shadow_offset = Vector2(1.395, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goal7"]
-bg_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.3372549)
-shadow_size = 5
-shadow_offset = Vector2(1.395, 3.41)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pqcl"]
+[sub_resource type="FontVariation" id="FontVariation_13qdw"]
+base_font = ExtResource("7_xud6o")
 
 [node name="GameOverScreen" type="Control" unique_id=82094813]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nxtx2")
 
-[node name="Panel" type="Panel" parent="." unique_id=2140817870]
+[node name="Panel" type="Panel" parent="." unique_id=1049710442]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dv24m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=758267108]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1199357936]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.5
-offset_top = 29.0
-offset_right = 167.5
-offset_bottom = 217.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -122.0
+offset_right = 293.0
+offset_bottom = -43.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 30
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 13
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1545039058]
+[node name="TryAgain" type="TextureButton" parent="HBoxContainer" unique_id=1288012307]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_jxg11")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_lem73")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7x5b8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_goal7")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0pqcl")
-text = "Try Again"
+texture_normal = ExtResource("2_goal7")
+texture_pressed = ExtResource("3_0pqcl")
+texture_hover = ExtResource("3_0pqcl")
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2082325350]
+[node name="MainMenu" type="TextureButton" parent="HBoxContainer" unique_id=684924328]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_jxg11")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_lem73")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7x5b8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_goal7")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0pqcl")
-text = "Back to Main Menu"
+texture_normal = ExtResource("4_gug23")
+texture_pressed = ExtResource("5_yhtj8")
+texture_hover = ExtResource("5_yhtj8")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=572783512]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=513700412]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -306.87537
-offset_top = -300.0
-offset_right = 306.87537
-offset_bottom = 46.0
+anchor_bottom = 1.0
+offset_left = -362.0
+offset_top = -521.0
+offset_right = 359.0
+offset_bottom = -141.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_nxtx2")
-expand_mode = 1
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_xrivr")
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_try_again_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_menu_pressed"]
+[node name="Label" type="Label" parent="." unique_id=449556485]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 54.0
+offset_right = 954.0
+offset_bottom = 162.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.88, 0.18479998, 0.18479998, 1)
+theme_override_fonts/font = SubResource("FontVariation_13qdw")
+theme_override_font_sizes/font_size = 120
+text = "GAME OVER"
+
+[node name="Reason" type="Label" parent="." unique_id=727284044]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -537.0
+offset_top = 152.0
+offset_right = 537.0
+offset_bottom = 198.0
+grow_horizontal = 2
+pivot_offset = Vector2(1234, -23)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.798255, 0.81, 0.105299994, 1)
+theme_override_fonts/font = SubResource("FontVariation_13qdw")
+theme_override_font_sizes/font_size = 50
+text = "CRASHED / TOO STRESSED"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1158191519]
+layout_mode = 0
+offset_left = 623.0
+offset_top = 243.0
+offset_right = 823.0
+offset_bottom = 552.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 48
+
+[node name="days_total" type="Label" parent="VBoxContainer" unique_id=1245293632]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_xud6o")
+theme_override_font_sizes/font_size = 40
+text = "10 days"
+
+[node name="passengers_total" type="Label" parent="VBoxContainer" unique_id=1988754679]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_xud6o")
+theme_override_font_sizes/font_size = 40
+text = "10x"
+
+[node name="money_total" type="Label" parent="VBoxContainer" unique_id=1265466300]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_xud6o")
+theme_override_font_sizes/font_size = 40
+text = "Php 100.00"
+
+[node name="points_total" type="Label" parent="VBoxContainer" unique_id=1202837682]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.7137255, 0.16862746, 1)
+theme_override_fonts/font = ExtResource("7_xud6o")
+theme_override_font_sizes/font_size = 40
+text = "1000000"
+
+[connection signal="pressed" from="HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="HBoxContainer/MainMenu" to="." method="_on_menu_pressed"]
