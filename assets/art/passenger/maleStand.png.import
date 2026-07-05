@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosry1baxes2c"
-path="res://.godot/imported/wavePass.png-cf95264b1207823a127b5f863a259938.ctex"
+uid="uid://b6ahnvuoxm3if"
+path="res://.godot/imported/maleStand.png-69849bfe4d2aadc8fda0be13665e2431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/passenger/wavePass.png"
-dest_files=["res://.godot/imported/wavePass.png-cf95264b1207823a127b5f863a259938.ctex"]
+source_file="res://assets/art/passenger/maleStand.png"
+dest_files=["res://.godot/imported/maleStand.png-69849bfe4d2aadc8fda0be13665e2431.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2dm73eh18u2h"
-path="res://.godot/imported/malePass-removebg-preview.png-57bf60c1c52d8d4bc8b1d4ce15a50641.ctex"
+uid="uid://cn7p6plymx0oh"
+path="res://.godot/imported/femaleParapo.png-eb2a42e2f253e5c5d53eb57c9a808afa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/passenger/malePass-removebg-preview.png"
-dest_files=["res://.godot/imported/malePass-removebg-preview.png-57bf60c1c52d8d4bc8b1d4ce15a50641.ctex"]
+source_file="res://assets/art/passenger/femaleParapo.png"
+dest_files=["res://.godot/imported/femaleParapo.png-eb2a42e2f253e5c5d53eb57c9a808afa.ctex"]
 
 [params]
 

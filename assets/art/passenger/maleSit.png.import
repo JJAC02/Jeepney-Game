@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2dm73eh18u2h"
-path="res://.godot/imported/malePass-removebg-preview.png-57bf60c1c52d8d4bc8b1d4ce15a50641.ctex"
+uid="uid://cm2uy682gtxhu"
+path="res://.godot/imported/maleSit.png-57947771cb4c0b8d8826605c395ffb5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/passenger/malePass-removebg-preview.png"
-dest_files=["res://.godot/imported/malePass-removebg-preview.png-57bf60c1c52d8d4bc8b1d4ce15a50641.ctex"]
+source_file="res://assets/art/passenger/maleSit.png"
+dest_files=["res://.godot/imported/maleSit.png-57947771cb4c0b8d8826605c395ffb5c.ctex"]
 
 [params]
 

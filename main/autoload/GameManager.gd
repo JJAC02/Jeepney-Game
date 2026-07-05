@@ -22,6 +22,24 @@ var total_days: int = 1
 var total_passengers: int = 0
 var total_points: int = 0
 
+#passenger metadata
+var is_regular: bool 
+var fare_received: int
+
+# when the game runs for the very first time
+func _initialize_game() -> void:
+	fare_received = 0
+	day = 1
+	money_goal = 100
+	current_view = "driver"
+	money = 50
+	passenger_count = 0
+	stress_level = 5.0
+	passenger_satisfaction = 5.0
+	time_remaining = 10.0
+	total_money = 0
+	total_days = 1
+	
 
 func _ready() -> void:
 	# Keep singleton active even when scene tree pauses
@@ -45,6 +63,7 @@ func _next_day():
 	# update day number and money goal
 	day += 1
 	money_goal += 100 # improve difficulty scaling
+	fare_received = 0
 	
 	# reset variables
 	reset_variables()
