@@ -2,12 +2,16 @@ extends Node2D
 
 @onready var driver_view: Camera2D = $DriverView/Camera2D
 @onready var passenger_view: Camera2D = $PassengerView/Camera2D
+@onready var passenger_slots: Node2D = $PassengerView/slots
 
 var pan_speed: float = 200
 var margin: float = 225
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for child in passenger_slots.get_children():
+		for grandchild in child.get_children():
+			grandchild.queue_free()
 	driver_view.make_current()
 	
 

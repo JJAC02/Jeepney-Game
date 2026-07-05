@@ -97,6 +97,7 @@ func show_full() -> void:
 
 func _on_texture_button_pressed() -> void:
 	print("emitting pickup")
+	print(GameManager.is_regular)
 	transfer_me.emit(self)
 	
 func _on_timer_timeout() -> void:

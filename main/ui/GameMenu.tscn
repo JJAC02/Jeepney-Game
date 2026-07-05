@@ -5,11 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://6qsv0x6r4bt6" path="res://assets/art/ui/GameMenuButtons&Panel/day_count.png" id="2_o3raj"]
 [ext_resource type="Texture2D" uid="uid://4tfqu2t6dytr" path="res://assets/art/ui/GameMenuButtons&Panel/stress_level.png" id="3_5jvlx"]
 [ext_resource type="Texture2D" uid="uid://dildgrl8o4tpa" path="res://assets/art/ui/GameMenuButtons&Panel/cabin_hover_btn.png" id="3_c4x5e"]
+[ext_resource type="FontFile" uid="uid://bvcsh66ll2giu" path="res://assets/art/ui/fonts/upheavtt.ttf" id="3_t0duy"]
 [ext_resource type="Texture2D" uid="uid://r4apw4sj4ay2" path="res://assets/art/ui/GameMenuButtons&Panel/target_goal.png" id="4_q0wj7"]
 [ext_resource type="Texture2D" uid="uid://b1cqxn080sqih" path="res://assets/art/ui/GameMenuButtons&Panel/cabin_btn.png" id="4_t0duy"]
 [ext_resource type="Texture2D" uid="uid://dmyf2bau2kb8i" path="res://assets/art/ui/GameMenuButtons&Panel/menu_btn.png" id="5_7dp3m"]
-[ext_resource type="Texture2D" uid="uid://b1vhdil6g08w2" path="res://assets/art/ui/GameMenuButtons&Panel/change_btn.png" id="5_ie0nj"]
-[ext_resource type="Texture2D" uid="uid://m8nwvyeras6v" path="res://assets/art/ui/GameMenuButtons&Panel/change_btn_hover.png" id="6_s7q7m"]
 [ext_resource type="Texture2D" uid="uid://dwxlloiyqv5fg" path="res://assets/art/ui/GameMenuButtons&Panel/menu_btn_hover.png" id="6_tqreb"]
 
 [node name="GameMenu" type="Control" unique_id=547347930]
@@ -33,6 +32,17 @@ offset_right = 1180.0
 offset_bottom = 70.0
 texture = ExtResource("2_o3raj")
 
+[node name="current_day" type="Label" parent="day_count" unique_id=1940230295]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 9.0
+offset_right = 162.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t0duy")
+theme_override_font_sizes/font_size = 39
+text = "1"
+
 [node name="cabin" type="TextureButton" parent="." unique_id=1424619954]
 layout_mode = 0
 offset_left = 570.0
@@ -43,23 +53,23 @@ texture_normal = ExtResource("3_c4x5e")
 texture_pressed = ExtResource("4_t0duy")
 texture_hover = ExtResource("4_t0duy")
 
-[node name="change" type="TextureButton" parent="." unique_id=996160636]
-layout_mode = 0
-offset_left = 1065.0
-offset_top = 582.0
-offset_right = 1241.0
-offset_bottom = 647.0
-texture_normal = ExtResource("5_ie0nj")
-texture_pressed = ExtResource("6_s7q7m")
-texture_hover = ExtResource("6_s7q7m")
-
 [node name="passenger" type="TextureRect" parent="." unique_id=1434059755]
 layout_mode = 0
 offset_left = 5.0
-offset_top = 73.0
+offset_top = 112.0
 offset_right = 118.0
-offset_bottom = 137.0
+offset_bottom = 176.0
 texture = ExtResource("2_fklji")
+
+[node name="passenger_count" type="Label" parent="passenger" unique_id=1818127814]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 17.0
+offset_right = 97.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("3_t0duy")
+theme_override_font_sizes/font_size = 39
+text = "1"
 
 [node name="stress_level" type="TextureRect" parent="." unique_id=1705211000]
 layout_mode = 0
@@ -83,17 +93,28 @@ offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 11
-max_value = 10.0
+max_value = 1.0
 step = 0.1
-value = 5.0
+value = 0.5
 
 [node name="target_goal" type="TextureRect" parent="." unique_id=1139998223]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
-offset_right = 138.0
-offset_bottom = 67.0
+offset_right = 212.21538
+offset_bottom = 103.0
 texture = ExtResource("4_q0wj7")
+
+[node name="target_money" type="Label" parent="target_goal" unique_id=844508745]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 46.0
+offset_right = 176.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t0duy")
+theme_override_font_sizes/font_size = 39
+text = "1"
 
 [node name="pause" type="TextureButton" parent="." unique_id=1729435410]
 layout_mode = 0
@@ -104,3 +125,6 @@ offset_bottom = 74.0
 texture_normal = ExtResource("5_7dp3m")
 texture_pressed = ExtResource("6_tqreb")
 texture_hover = ExtResource("6_tqreb")
+
+[connection signal="pressed" from="cabin" to="." method="_on_cabin_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_button_pressed"]

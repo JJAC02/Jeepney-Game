@@ -2,6 +2,12 @@ extends Node
 
 #signals
 signal hide_money_manager
+signal confirmed
+@onready var fair_paid: Label = $PanelContainer/Control/fair_paid
+@onready var current_stash: Label = $PanelContainer/Control/current_stash
+
+# buttons
+
 
 #Environment
 var passenger_fare:= 15 #placeholder for int from actual passenger
@@ -89,6 +95,24 @@ func _on_add_50_peso_pressed() -> void:
 	add_change_value(50)
 
 func _on_confirm_pressed() -> void:
+	if driver_change < commuter_change :
+		print('kulang')
+		stress_bar_ph += 1
+		print(stress_bar_ph)
+		return
+	
+	if driver_change == commuter_change:
+		print("correct")
+		
+	elif driver_change > commuter_change:
+		print("wrong change")
+		print('you lose money') #implement code
+		stress_bar_ph += 1
+		print(stress_bar_ph)
+	confirmed.emit()
+	GameManager.money -= driver_change  #revisit for Node
+	display_commuter_details()
+	driver_change = 0
 	calculate_change()
 	display_change()
 	if driver_change < commuter_change :
