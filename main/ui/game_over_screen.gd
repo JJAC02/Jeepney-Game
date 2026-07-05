@@ -1,20 +1,25 @@
 extends Control
 
-signal restart_game()
+@onready var try_again: TextureButton = $HBoxContainer/TryAgain
+@onready var main_menu: TextureButton = $HBoxContainer/MainMenu
+@onready var reason_lost: Label = $Reason
+@onready var days_total: Label = $VBoxContainer/days_total
+@onready var passengers_total: Label = $VBoxContainer/passengers_total
+@onready var money_total: Label = $VBoxContainer/money_total
+@onready var points_total: Label = $VBoxContainer/points_total
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func display_game_over(reason: String):
+	reason_lost.text = "Lost due to: " + reason
+	days_total.text = str(GameManager.total_days) + " days"
+	passengers_total.text = str(GameManager.total_passengers) + "x"
+	money_total.text = "Php " + str(GameManager.total_money)
+	points_total.text = str(GameManager.total_points)
 
 
 func _on_menu_pressed() -> void:
-	GameManager.back_to_main_menu.emit(self)
+	GameManager.back_to_main_menu.emit()
 
 
 func _on_try_again_pressed() -> void:
-	restart_game.emit()
+	GameManager.restart_game.emit()

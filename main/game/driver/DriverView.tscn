@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://d4ijs1wsxi8ky" path="res://main/game/driver/road_background.gd" id="2_road"]
 [ext_resource type="PackedScene" uid="uid://coyvid1k37xms" path="res://main/game/driver/MoneyManager.tscn" id="3_r56b5"]
 [ext_resource type="Script" uid="uid://bdndbyuevwp4w" path="res://main/game/camera_2d.gd" id="4_gw5pf"]
-[ext_resource type="Texture2D" uid="uid://codmwq3nf4mvx" path="res://assets/art/ui/icon.svg" id="4_ve711"]
+[ext_resource type="Texture2D" uid="uid://b1vhdil6g08w2" path="res://assets/art/ui/GameMenuButtons&Panel/change_btn.png" id="6_2t0mx"]
+[ext_resource type="Texture2D" uid="uid://m8nwvyeras6v" path="res://assets/art/ui/GameMenuButtons&Panel/change_btn_hover.png" id="7_1u35n"]
 
 [node name="DriverView" type="Node2D" unique_id=356773611]
 script = ExtResource("1_ni8rb")
@@ -57,13 +58,15 @@ offset_bottom = -292.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="TextureButton" type="TextureButton" parent="UI" unique_id=637707343]
+[node name="change" type="TextureButton" parent="UI" unique_id=36181060]
 layout_mode = 0
-offset_left = 410.0
-offset_top = 172.0
-offset_right = 538.0
-offset_bottom = 300.0
-texture_normal = ExtResource("4_ve711")
+offset_left = 388.0
+offset_top = 232.0
+offset_right = 564.0
+offset_bottom = 297.0
+texture_normal = ExtResource("6_2t0mx")
+texture_pressed = ExtResource("7_1u35n")
+texture_hover = ExtResource("7_1u35n")
 
 [connection signal="hide_money_manager" from="UI/MoneyManager" to="." method="_on_hide_money_manager"]
-[connection signal="pressed" from="UI/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="UI/change" to="." method="_on_show_money_manager_pressed"]

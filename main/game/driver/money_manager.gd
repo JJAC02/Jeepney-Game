@@ -1,6 +1,11 @@
 extends Node
 
 signal hide_money_manager
+@onready var fair_paid: Label = $PanelContainer/Control/fair_paid
+@onready var current_stash: Label = $PanelContainer/Control/current_stash
+
+# buttons
+
 
 #Environment
 const discount := 0.8
@@ -29,7 +34,7 @@ func calculate_change():
 		commuter_actual_fare = passenger_fare * discount
 	else:
 		commuter_actual_fare = passenger_fare
-	print(commuter_actual_fare);
+	print(commuter_actual_fare)
 	commuter_change = commuter_paid - passenger_fare
 	print(commuter_change)
 
@@ -50,15 +55,16 @@ func subtract_change_value(passedValue:int) -> void:
 	display_change()
 
 func display_change() -> void:
-	$change_display.text = "Change: " + str(driver_change)
+	#$change_display.text = "Change: " + str(driver_change)
 	pass
 
 func display_commuter_details() -> void:
 	var available_discount:int = round((1 - discount) * 100)
-	$display_total_d_money.text = "Total DM: " + str(total_driver_money)
-	$commuter_paid_display.text = "Commuter Gave: " + str(total_driver_money)
-	$commuter_type_display.text = "Type: " + str(total_driver_money)
-	$discount_details.text = "Students, Senior Citizens, and PWDs\n can avail a " + str(available_discount) + "%"
+	#$display_total_d_money.text = "Total DM: " + str(total_driver_money)
+	#$commuter_paid_display.text = "Commuter Gave: " + str(total_driver_money)
+	#$commuter_type_display.text = "Type: " + str(total_driver_money)
+	#$discount_details.text = "Students, Senior Citizens, and PWDs\n can avail a " + str(available_discount) + "%"
+	pass
 
 #Button Functions
 func _on_add_1_peso_pressed() -> void:
@@ -75,21 +81,6 @@ func _on_add_20_peso_pressed() -> void:
 
 func _on_add_50_peso_pressed() -> void:
 	add_change_value(50)
-
-func _on_min_1_peso_pressed() -> void:
-	subtract_change_value(1)
-
-func _on_min_5_peso_pressed() -> void:
-	subtract_change_value(5)
-
-func _on_min_10_peso_pressed() -> void:
-	subtract_change_value(10)
-
-func _on_min_20_peso_pressed() -> void:
-	subtract_change_value(20)
-
-func _on_min_50_peso_pressed() -> void:
-	subtract_change_value(50)
 
 func _on_confirm_pressed() -> void:
 	if driver_change == commuter_change:

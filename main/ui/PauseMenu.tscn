@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfg3rgcmdew51" path="res://assets/art/ui/PauseMenuButtons&Panels/q.png" id="2_70u08"]
 [ext_resource type="Texture2D" uid="uid://cgfx4bm8qm3o7" path="res://assets/art/ui/PauseMenuButtons&Panels/w.png" id="3_qwa3p"]
 [ext_resource type="Texture2D" uid="uid://durtxd6jxk000" path="res://assets/art/ui/PauseMenuButtons&Panels/w1.png" id="4_473bk"]
-[ext_resource type="Texture2D" uid="uid://1tgbut5xtpgt" path="res://assets/art/ui/PauseMenuButtons&Panels/e.png" id="5_b33sl"]
+[ext_resource type="Texture2D" uid="uid://cbt8de787nmqw" path="res://assets/art/ui/PauseMenuButtons&Panels/e.png" id="5_b33sl"]
 [ext_resource type="Texture2D" uid="uid://b61y3naoob78g" path="res://assets/art/ui/PauseMenuButtons&Panels/q1.png" id="6_csu0a"]
 [ext_resource type="Texture2D" uid="uid://0ggvd4gnpi4j" path="res://assets/art/ui/PauseMenuButtons&Panels/r.png" id="7_yt4wd"]
 [ext_resource type="Texture2D" uid="uid://cosffpkg2jqam" path="res://assets/art/ui/PauseMenuButtons&Panels/e1.png" id="8_8ew0p"]
@@ -20,6 +20,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ypeaj")
+
+[node name="Panel" type="Panel" parent="." unique_id=1643031298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=201811195]
 layout_mode = 1
@@ -54,20 +62,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer/Control/VBoxContainer" unique_id=1560784557]
+[node name="Resume" type="TextureButton" parent="PanelContainer/Control/VBoxContainer" unique_id=1560784557]
 layout_mode = 2
 texture_normal = ExtResource("3_qwa3p")
 texture_pressed = ExtResource("4_473bk")
 texture_hover = ExtResource("4_473bk")
 
-[node name="TextureButton2" type="TextureButton" parent="PanelContainer/Control/VBoxContainer" unique_id=1920401050]
+[node name="Restart" type="TextureButton" parent="PanelContainer/Control/VBoxContainer" unique_id=1920401050]
 layout_mode = 2
 texture_normal = ExtResource("5_b33sl")
 texture_pressed = ExtResource("6_csu0a")
 texture_hover = ExtResource("6_csu0a")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer/Control/VBoxContainer" unique_id=1469797527]
+[node name="MainMenu" type="TextureButton" parent="PanelContainer/Control/VBoxContainer" unique_id=1469797527]
 layout_mode = 2
 texture_normal = ExtResource("8_8ew0p")
 texture_pressed = ExtResource("7_yt4wd")
 texture_hover = ExtResource("7_yt4wd")
+
+[connection signal="pressed" from="PanelContainer/Control/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/Control/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/Control/VBoxContainer/MainMenu" to="." method="_on_menu_pressed"]
