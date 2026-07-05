@@ -1,29 +1,34 @@
 extends Node
 
 @warning_ignore("unused_signal") signal game_started
-#signal game_over(score: int)
+@warning_ignore("unused_signal") signal restart_game
 @warning_ignore("unused_signal") signal back_to_main_menu(node_self: Control)
+@warning_ignore("unused_signal") signal game_over(reason: String)
 
-@warning_ignore("unused_signal") signal game_over
-
-# variables persist over different days
+# variables that change every day
 var day: int = 1
 var money_goal: int = 100
 
-# variables reset per day
+# variables that reset per day
 var current_view: String = "driver"
 var money: int = 50
 var passenger_count: int = 0
-var stress_level: float = 5.0
-var passenger_satisfaction: float = 5.0
-var time_remaining: float = 10.0 # in seconds
+var fatigue_level: float = 5.0
+var time_remaining: float = 60.0 # how long the game lasts (in seconds)
 
 # variables persist over different days
 var total_money: int = 0
 var total_days: int = 1
+var total_passengers: int = 0
+var total_points: int = 0
+
+#passenger metadata
+var is_regular: bool 
+var fare_received: int
 
 # when the game runs for the very first time
 func _initialize_game() -> void:
+	fare_received = 0
 	day = 1
 	money_goal = 100
 	current_view = "driver"
@@ -39,19 +44,36 @@ func _initialize_game() -> void:
 func _ready() -> void:
 	# Keep singleton active even when scene tree pauses
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	_initialize_game()
+	absolute_restart_variables()
 
-func update_money(amount: int) -> void:
-	money += amount
-	total_money += amount
 
-func _next_day():
-	day += 1
-	money_goal += 100 # improve difficulty scaling
-	
+func reset_variables():
 	current_view = "driver"
 	money = 50
 	passenger_count = 0
-	stress_level = 5.0
-	passenger_satisfaction = 5.0
-	time_remaining = 10.0
+	fatigue_level = 5.0
+	time_remaining = 60.0
+
+func _next_day():
+	# add to total money and days
+	total_money += money
+	total_days += 1
+	total_passengers += passenger_count
+	
+	# update day number and money goal
+	day += 1
+	money_goal += 100 # improve difficulty scaling
+	fare_received = 0
+	
+	# reset variables
+	reset_variables()
+
+func absolute_restart_variables():
+	reset_variables()
+	day = 1
+	money_goal = 100
+	
+	total_money = 0
+	total_days = 1
+	total_passengers = 0
+	total_points = 0

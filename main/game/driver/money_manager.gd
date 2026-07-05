@@ -3,6 +3,11 @@ extends Node
 #signals
 signal hide_money_manager
 signal confirmed
+@onready var fair_paid: Label = $PanelContainer/Control/fair_paid
+@onready var current_stash: Label = $PanelContainer/Control/current_stash
+
+# buttons
+
 
 #Environment
 const discount := 0.8
@@ -34,6 +39,8 @@ func calculate_change():
 		commuter_actual_fare = roundi(passenger_fare * discount)
 	print(commuter_actual_fare);
 	commuter_change = commuter_paid - commuter_actual_fare
+	print(commuter_actual_fare)
+	commuter_change = commuter_paid - passenger_fare
 	print(commuter_change)
 
 func value_Checker() -> void:
@@ -53,7 +60,7 @@ func subtract_change_value(passedValue:int) -> void:
 	display_change()
 
 func display_change() -> void:
-	$change_display.text = "Change: " + str(driver_change)
+	#$change_display.text = "Change: " + str(driver_change)
 	pass
 
 func display_commuter_details() -> void:
@@ -77,21 +84,6 @@ func _on_add_20_peso_pressed() -> void:
 
 func _on_add_50_peso_pressed() -> void:
 	add_change_value(50)
-
-func _on_min_1_peso_pressed() -> void:
-	subtract_change_value(1)
-
-func _on_min_5_peso_pressed() -> void:
-	subtract_change_value(5)
-
-func _on_min_10_peso_pressed() -> void:
-	subtract_change_value(10)
-
-func _on_min_20_peso_pressed() -> void:
-	subtract_change_value(20)
-
-func _on_min_50_peso_pressed() -> void:
-	subtract_change_value(50)
 
 func _on_confirm_pressed() -> void:
 	if driver_change < commuter_change :
