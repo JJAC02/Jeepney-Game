@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbt8de787nmqw"
-path="res://.godot/imported/e.png-69d54df59bae7aa357007f86f882d76c.ctex"
+uid="uid://drbtqpy7f7sh1"
+path="res://.godot/imported/111.png-df2efa7dee647da85c8aa501d7cead9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/PauseMenuButtons&Panels/e.png"
-dest_files=["res://.godot/imported/e.png-69d54df59bae7aa357007f86f882d76c.ctex"]
+source_file="res://assets/art/ui/MoneyManagerButtonsPanel/111.png"
+dest_files=["res://.godot/imported/111.png-df2efa7dee647da85c8aa501d7cead9a.ctex"]
 
 [params]
 
