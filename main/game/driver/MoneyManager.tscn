@@ -1,177 +1,112 @@
 [gd_scene format=3 uid="uid://coyvid1k37xms"]
 
 [ext_resource type="Script" uid="uid://o4dd4n1digl3" path="res://main/game/driver/money_manager.gd" id="1_6go5r"]
+[ext_resource type="Texture2D" uid="uid://bdtlx6jn7tg0h" path="res://assets/art/ui/MoneyManagerButtonsPanel/money1.png" id="2_axjka"]
+[ext_resource type="Texture2D" uid="uid://b788j4kje4xd" path="res://assets/art/ui/MoneyManagerButtonsPanel/clearBTN.png" id="3_2bf3s"]
+[ext_resource type="Texture2D" uid="uid://diysm48olej2d" path="res://assets/art/ui/MoneyManagerButtonsPanel/1010.png" id="4_ky853"]
+[ext_resource type="Texture2D" uid="uid://c8faqkll4aulj" path="res://assets/art/ui/MoneyManagerButtonsPanel/confirmBTN.png" id="5_btlwr"]
+[ext_resource type="Texture2D" uid="uid://c2ns4amiwvon4" path="res://assets/art/ui/MoneyManagerButtonsPanel/1001.png" id="6_4vybu"]
+[ext_resource type="Texture2D" uid="uid://bxrlif3tsma78" path="res://assets/art/ui/MoneyManagerButtonsPanel/1pesoBTN.png" id="7_n7frj"]
+[ext_resource type="Texture2D" uid="uid://bg6fgbtk1qc7" path="res://assets/art/ui/MoneyManagerButtonsPanel/11.png" id="8_l1gyx"]
+[ext_resource type="Texture2D" uid="uid://gvm0wvbtuod2" path="res://assets/art/ui/MoneyManagerButtonsPanel/5pesoBTN.png" id="9_viqgy"]
+[ext_resource type="Texture2D" uid="uid://b5l6kl4t8bk7e" path="res://assets/art/ui/MoneyManagerButtonsPanel/100.png" id="10_vay0t"]
+[ext_resource type="Texture2D" uid="uid://b234y1v8rorlq" path="res://assets/art/ui/MoneyManagerButtonsPanel/10pesoBTN.png" id="11_dqam5"]
+[ext_resource type="Texture2D" uid="uid://0jmt1si0kk8u" path="res://assets/art/ui/MoneyManagerButtonsPanel/101.png" id="12_fk0d7"]
+[ext_resource type="Texture2D" uid="uid://chq5jga8jjuwf" path="res://assets/art/ui/MoneyManagerButtonsPanel/20pesoBTN.png" id="13_5mc1n"]
+[ext_resource type="Texture2D" uid="uid://drbtqpy7f7sh1" path="res://assets/art/ui/MoneyManagerButtonsPanel/111.png" id="14_8i11n"]
+[ext_resource type="Texture2D" uid="uid://5b5osradv8jw" path="res://assets/art/ui/MoneyManagerButtonsPanel/50pesoBTN.png" id="15_jm618"]
+[ext_resource type="Texture2D" uid="uid://chcl61vo2q4uh" path="res://assets/art/ui/MoneyManagerButtonsPanel/1000.png" id="16_k4ux3"]
+[ext_resource type="Texture2D" uid="uid://cfyv1dvyj3gtm" path="res://assets/art/ui/MoneyManagerButtonsPanel/10.png" id="17_tunu6"]
+[ext_resource type="Texture2D" uid="uid://duxodceeks0lh" path="res://assets/art/ui/MoneyManagerButtonsPanel/01.png" id="18_66vyu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1lj4"]
+texture = ExtResource("2_axjka")
 
 [node name="MoneyManager" type="Control" unique_id=1833557337]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 5.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_6go5r")
 
-[node name="add1Peso" type="Button" parent="." unique_id=1057842420]
-layout_mode = 0
-offset_left = 1085.0
-offset_top = 354.0
-offset_right = 1136.0
-offset_bottom = 385.0
-text = "add 1"
-
-[node name="add5Peso" type="Button" parent="." unique_id=172877775]
-layout_mode = 0
-offset_left = 1083.0
-offset_top = 404.0
-offset_right = 1134.0
-offset_bottom = 435.0
-text = "add 5"
-
-[node name="add10Peso" type="Button" parent="." unique_id=2064824352]
-layout_mode = 0
-offset_left = 1086.0
-offset_top = 453.0
-offset_right = 1137.0
-offset_bottom = 484.0
-text = "add 10"
-
-[node name="add20Peso" type="Button" parent="." unique_id=2031355634]
-layout_mode = 0
-offset_left = 1085.0
-offset_top = 525.0
-offset_right = 1136.0
-offset_bottom = 556.0
-text = "add 20"
-
-[node name="add50Peso" type="Button" parent="." unique_id=2014605288]
-layout_mode = 0
-offset_left = 1090.0
-offset_top = 584.0
-offset_right = 1141.0
-offset_bottom = 615.0
-text = "add 50"
-
-[node name="min1Peso" type="Button" parent="." unique_id=315704897]
-layout_mode = 0
-offset_left = 943.0
-offset_top = 348.0
-offset_right = 1013.0
-offset_bottom = 379.0
-text = "minus 1"
-
-[node name="min5Peso" type="Button" parent="." unique_id=1365042966]
-layout_mode = 0
-offset_left = 945.0
-offset_top = 403.0
-offset_right = 1015.0
-offset_bottom = 434.0
-text = "minus 5"
-
-[node name="min10Peso" type="Button" parent="." unique_id=345896503]
-layout_mode = 0
-offset_left = 945.0
-offset_top = 450.0
-offset_right = 1015.0
-offset_bottom = 481.0
-text = "minus 10"
-
-[node name="min20Peso" type="Button" parent="." unique_id=1689719724]
-layout_mode = 0
-offset_left = 941.0
-offset_top = 520.0
-offset_right = 1011.0
-offset_bottom = 551.0
-text = "minus 20"
-
-[node name="min50Peso" type="Button" parent="." unique_id=977006343]
-layout_mode = 0
-offset_left = 940.0
-offset_top = 584.0
-offset_right = 1010.0
-offset_bottom = 615.0
-text = "minus 50"
-
-[node name="confirm" type="Button" parent="." unique_id=153483723]
-layout_mode = 0
-offset_left = 811.0
-offset_top = 433.0
-offset_right = 880.0
-offset_bottom = 464.0
-text = "confirm"
-
-[node name="clear" type="Button" parent="." unique_id=1737511397]
-layout_mode = 0
-offset_left = 824.0
-offset_top = 508.0
-offset_right = 870.0
-offset_bottom = 539.0
-text = "clear"
-
-[node name="hide" type="Button" parent="." unique_id=1760153817]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1411956601]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 508.0
-offset_top = 420.0
-offset_right = 552.0
-offset_bottom = 451.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Hide"
+offset_left = 910.0
+offset_top = 195.0
+offset_right = 1235.0
+offset_bottom = 635.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_b1lj4")
 
-[node name="change_display" type="Label" parent="." unique_id=362568298]
+[node name="Control" type="Control" parent="PanelContainer" unique_id=362466304]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/Control" unique_id=1700433775]
 layout_mode = 0
-offset_left = 987.0
-offset_top = 300.0
-offset_right = 1089.0
-offset_bottom = 323.0
-text = "change value"
+offset_left = 17.0
+offset_top = 379.0
+offset_right = 308.0
+offset_bottom = 419.0
+theme_override_constants/separation = 11
 
-[node name="commuter_paid_display" type="Label" parent="." unique_id=1584337801]
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/Control/HBoxContainer2" unique_id=1355140872]
+layout_mode = 2
+texture_normal = ExtResource("3_2bf3s")
+texture_pressed = ExtResource("4_ky853")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/Control/HBoxContainer2" unique_id=792708188]
+layout_mode = 2
+texture_normal = ExtResource("5_btlwr")
+texture_pressed = ExtResource("6_4vybu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Control" unique_id=576070656]
 layout_mode = 0
-offset_left = 977.0
-offset_top = 226.0
-offset_right = 1112.0
-offset_bottom = 249.0
-text = "commuter values"
+offset_left = 19.0
+offset_top = 308.0
+offset_right = 306.0
+offset_bottom = 358.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 9
 
-[node name="commuter_type_display" type="Label" parent="." unique_id=48698824]
+[node name="TextureButton5" type="TextureButton" parent="PanelContainer/Control/HBoxContainer" unique_id=1909169187]
+layout_mode = 2
+texture_normal = ExtResource("7_n7frj")
+texture_pressed = ExtResource("8_l1gyx")
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/Control/HBoxContainer" unique_id=1836562244]
+layout_mode = 2
+texture_normal = ExtResource("9_viqgy")
+texture_pressed = ExtResource("10_vay0t")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/Control/HBoxContainer" unique_id=1473352638]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("11_dqam5")
+texture_pressed = ExtResource("12_fk0d7")
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer/Control/HBoxContainer" unique_id=1173520960]
+layout_mode = 2
+texture_normal = ExtResource("13_5mc1n")
+texture_pressed = ExtResource("14_8i11n")
+
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer/Control/HBoxContainer" unique_id=1210402803]
+layout_mode = 2
+texture_normal = ExtResource("15_jm618")
+texture_pressed = ExtResource("16_k4ux3")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1864158413]
 layout_mode = 0
-offset_left = 984.0
-offset_top = 257.0
-offset_right = 1031.0
-offset_bottom = 280.0
-text = "c type"
-
-[node name="display_total_d_money" type="Label" parent="." unique_id=1379852544]
-layout_mode = 0
-offset_left = 841.0
-offset_top = 143.0
-offset_right = 949.0
-offset_bottom = 166.0
-text = "total d money"
-
-[node name="discount_details" type="Label" parent="." unique_id=1544053220]
-layout_mode = 0
-offset_left = 978.0
-offset_top = 162.0
-offset_right = 1101.0
-offset_bottom = 185.0
-text = "discount details"
-
-[connection signal="pressed" from="add1Peso" to="." method="_on_add_1_peso_pressed"]
-[connection signal="pressed" from="add5Peso" to="." method="_on_add_5_peso_pressed"]
-[connection signal="pressed" from="add10Peso" to="." method="_on_add_10_peso_pressed"]
-[connection signal="pressed" from="add20Peso" to="." method="_on_add_20_peso_pressed"]
-[connection signal="pressed" from="add50Peso" to="." method="_on_add_50_peso_pressed"]
-[connection signal="pressed" from="min1Peso" to="." method="_on_min_1_peso_pressed"]
-[connection signal="pressed" from="min5Peso" to="." method="_on_min_5_peso_pressed"]
-[connection signal="pressed" from="min10Peso" to="." method="_on_min_10_peso_pressed"]
-[connection signal="pressed" from="min20Peso" to="." method="_on_min_20_peso_pressed"]
-[connection signal="pressed" from="min50Peso" to="." method="_on_min_50_peso_pressed"]
-[connection signal="pressed" from="confirm" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
-[connection signal="pressed" from="hide" to="." method="_on_hide_pressed"]
+offset_left = 897.0
+offset_top = 187.0
+offset_right = 922.0
+offset_bottom = 212.0
+texture_normal = ExtResource("17_tunu6")
+texture_pressed = ExtResource("18_66vyu")

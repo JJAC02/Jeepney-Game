@@ -1,131 +1,106 @@
 [gd_scene format=3 uid="uid://dk1wdlf4kpxlu"]
 
 [ext_resource type="Script" uid="uid://biaqr2whrf5dd" path="res://main/ui/game_menu.gd" id="1_vdw2e"]
-[ext_resource type="FontFile" uid="uid://cv3o1vdf6uie0" path="res://assets/art/ui/fonts/pirkkala.ttf" id="2_kvysm"]
-[ext_resource type="Texture2D" uid="uid://codmwq3nf4mvx" path="res://assets/art/ui/icon.svg" id="3_rv0xi"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxg5"]
-bg_color = Color(0.4958614, 0.5499482, 1, 1)
+[ext_resource type="Texture2D" uid="uid://qteo063yic7q" path="res://assets/art/ui/GameMenuButtons&Panel/passenger_count.png" id="2_fklji"]
+[ext_resource type="Texture2D" uid="uid://6qsv0x6r4bt6" path="res://assets/art/ui/GameMenuButtons&Panel/day_count.png" id="2_o3raj"]
+[ext_resource type="Texture2D" uid="uid://4tfqu2t6dytr" path="res://assets/art/ui/GameMenuButtons&Panel/stress_level.png" id="3_5jvlx"]
+[ext_resource type="Texture2D" uid="uid://dildgrl8o4tpa" path="res://assets/art/ui/GameMenuButtons&Panel/cabin_hover_btn.png" id="3_c4x5e"]
+[ext_resource type="Texture2D" uid="uid://r4apw4sj4ay2" path="res://assets/art/ui/GameMenuButtons&Panel/target_goal.png" id="4_q0wj7"]
+[ext_resource type="Texture2D" uid="uid://b1cqxn080sqih" path="res://assets/art/ui/GameMenuButtons&Panel/cabin_btn.png" id="4_t0duy"]
+[ext_resource type="Texture2D" uid="uid://dmyf2bau2kb8i" path="res://assets/art/ui/GameMenuButtons&Panel/menu_btn.png" id="5_7dp3m"]
+[ext_resource type="Texture2D" uid="uid://b1vhdil6g08w2" path="res://assets/art/ui/GameMenuButtons&Panel/change_btn.png" id="5_ie0nj"]
+[ext_resource type="Texture2D" uid="uid://m8nwvyeras6v" path="res://assets/art/ui/GameMenuButtons&Panel/change_btn_hover.png" id="6_s7q7m"]
+[ext_resource type="Texture2D" uid="uid://dwxlloiyqv5fg" path="res://assets/art/ui/GameMenuButtons&Panel/menu_btn_hover.png" id="6_tqreb"]
 
 [node name="GameMenu" type="Control" unique_id=547347930]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 2.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vdw2e")
 
-[node name="Button" type="Button" parent="." unique_id=1921817485]
+[node name="day_count" type="TextureRect" parent="." unique_id=434901814]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 10.0
+offset_right = 1180.0
+offset_bottom = 70.0
+texture = ExtResource("2_o3raj")
+
+[node name="cabin" type="TextureButton" parent="." unique_id=1424619954]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 615.0
+offset_right = 746.0
+offset_bottom = 679.0
+texture_normal = ExtResource("3_c4x5e")
+texture_pressed = ExtResource("4_t0duy")
+texture_hover = ExtResource("4_t0duy")
+
+[node name="change" type="TextureButton" parent="." unique_id=996160636]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 582.0
+offset_right = 1241.0
+offset_bottom = 647.0
+texture_normal = ExtResource("5_ie0nj")
+texture_pressed = ExtResource("6_s7q7m")
+texture_hover = ExtResource("6_s7q7m")
+
+[node name="passenger" type="TextureRect" parent="." unique_id=1434059755]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 73.0
+offset_right = 118.0
+offset_bottom = 137.0
+texture = ExtResource("2_fklji")
+
+[node name="stress_level" type="TextureRect" parent="." unique_id=1705211000]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 75.0
+texture = ExtResource("3_5jvlx")
+
+[node name="ProgressBar" type="ProgressBar" parent="stress_level" unique_id=283057513]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -98.5
-offset_top = -188.0
-offset_right = 98.5
-offset_bottom = -83.0
+offset_left = -186.5
+offset_top = -31.0
+offset_right = 163.505
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 76
-theme_override_styles/normal = SubResource("StyleBoxFlat_rwxg5")
-text = "BACK"
-
-[node name="Button2" type="Button" parent="." unique_id=1065602710]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -508.5
-offset_top = -588.0
-offset_right = -360.5
-offset_bottom = -514.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 51
-theme_override_styles/normal = SubResource("StyleBoxFlat_rwxg5")
-text = "pause"
-
-[node name="Label" type="Label" parent="." unique_id=1032887495]
-layout_mode = 0
-offset_left = 246.0
-offset_top = 57.0
-offset_right = 453.0
-offset_bottom = 141.0
-theme_override_fonts/font = ExtResource("2_kvysm")
-theme_override_font_sizes/font_size = 39
-text = "Day X
-Goal: X"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1507399363]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 164.0
-offset_right = 311.0
-offset_bottom = 439.0
-theme_override_constants/separation = 29
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=646013044]
-layout_mode = 2
-offset_transform_position = Vector2(0.66, 0)
-offset_transform_position_ratio = Vector2(0.29, 0)
-offset_transform_scale = Vector2(1.38, 1.38)
-offset_transform_pivot = Vector2(0.17, 0)
-offset_transform_pivot_ratio = Vector2(0.765, 0.5)
-theme_override_constants/separation = 18
-accessibility_region = true
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=412887180]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-texture = ExtResource("3_rv0xi")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=775662482]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_kvysm")
-theme_override_font_sizes/font_size = 36
-text = "PhpX"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1524947731]
-layout_mode = 2
-offset_transform_position = Vector2(0.66, 0)
-offset_transform_position_ratio = Vector2(0.29, 0)
-offset_transform_scale = Vector2(1.38, 1.38)
-offset_transform_pivot = Vector2(0.17, 0)
-offset_transform_pivot_ratio = Vector2(0.765, 0.5)
-theme_override_constants/separation = 18
-accessibility_region = true
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=1228158392]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-texture = ExtResource("3_rv0xi")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=153834134]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_kvysm")
-theme_override_font_sizes/font_size = 36
-text = "xX"
-
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=283057513]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -167.0
-offset_top = 65.0
-offset_right = 167.0
-offset_bottom = 128.0
-grow_horizontal = 2
+theme_override_font_sizes/font_size = 11
 max_value = 10.0
 step = 0.1
 value = 5.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_pause_button_pressed"]
+[node name="target_goal" type="TextureRect" parent="." unique_id=1139998223]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 138.0
+offset_bottom = 67.0
+texture = ExtResource("4_q0wj7")
+
+[node name="pause" type="TextureButton" parent="." unique_id=1729435410]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 5.0
+offset_right = 1266.0
+offset_bottom = 74.0
+texture_normal = ExtResource("5_7dp3m")
+texture_pressed = ExtResource("6_tqreb")
+texture_hover = ExtResource("6_tqreb")
